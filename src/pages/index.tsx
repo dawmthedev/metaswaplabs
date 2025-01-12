@@ -28,9 +28,10 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "Years of experience", value: "3+" },
-  { label: "Technologies mastered", value: "5+" },
-  { label: "Companies worked with", value: "15+" },
+  { label: "Years of Experience", value: "4+" },
+  { label: "Projects Delivered", value: "300+" },
+  { label: "Global Clients", value: "150+" },
+ 
 ];
 
 const projects = [
@@ -60,9 +61,9 @@ const projects = [
   },
   {
     title: "This website",
-    description: "My personal website",
+    description: "Our personal website",
     image: "/assets/portfolio.webm",
-    href: "https://github.com/wendoj/portfolio",
+    href: "https://Unhashlabs.xyz",
   },
 ];
 
@@ -70,31 +71,31 @@ const services = [
   {
     service: "Frontend Development",
     description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
+      "Crafting responsive and dynamic user interfaces with cutting-edge technologies to deliver seamless web experiences.",
     icon: Code2,
   },
   {
     service: "UX Design",
     description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
+      "Designing intuitive and user-centered interfaces that enhance engagement and drive conversions.",
     icon: Frame,
   },
   {
     service: "SEO Optimization",
     description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
+      "Boosting your website's search engine rankings to attract more organic traffic and improve online visibility.",
     icon: SearchCheck,
   },
   {
-    service: "Responsive Design",
+    service: "Digital Marketing",
     description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
+      "Implementing comprehensive digital strategies to effectively promote your brand across various online platforms.",
     icon: MonitorSmartphone,
   },
   {
-    service: "Backend Development",
+    service: "Corporate Services",
     description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
+      "Providing tailored solutions to streamline your business operations and enhance corporate efficiency.",
     icon: Eye,
   },
 ];
@@ -202,11 +203,11 @@ export default function Home() {
                 data-scroll-direction="horizontal"
               >
                 <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
-                  Hello, I&apos;m
+                  Hello, We&apos;re
                   <br />
                 </span>
                 <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  WendoJ.
+                  Unhash Labs
                 </span>
               </h1>
               <p
@@ -215,7 +216,7 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced full-stack website developer with a passion for
+                An experienced full-stack web agency  with a passion for
                 crafting unique digital experiences.
               </p>
             </div>
@@ -225,7 +226,7 @@ export default function Home() {
               data-scroll-speed=".06"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-              <Link href="mailto:wendoj@proton.me" passHref>
+              <Link href="/" passHref>
                 <Button>
                   Get in touch <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -268,36 +269,71 @@ export default function Home() {
             data-scroll-position="top"
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
-            <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              I&apos;m an experienced full-stack developer proficient in{" "}
-              <Link
-                href="https://create.t3.gg/"
-                target="_blank"
-                className="underline"
-              >
-                TypeScript, Tailwind, and Next.js
-              </Link>{" "}
-              since 2021. My experience spans from startups to mid-sized
-              companies, where I&apos;ve been instrumental in the entire product
-              design process; from ideation and wireframing, through
-              prototyping, to the delivery of the final product, all while
-              efficiently collaborating with cross-functional teams.
-            </h2>
-            <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
-              {aboutStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="flex flex-col items-center text-center xl:items-start xl:text-start"
-                >
-                  <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl">
-                    {stat.value}
-                  </span>
-                  <span className="tracking-tight text-muted-foreground xl:text-lg">
-                    {stat.label}
-                  </span>
-                </div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="py-16 pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]"
+            >
+              We are a cutting-edge full-stack development agency specializing in{" "}
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="inline-flex flex-wrap gap-1.5 mb-10"
+          >
+          {[
+            "software development",
+            "corporate solutions",
+            "UI/UX design",
+            "cloud architecture",
+            "digital transformation",
+          ].map((text, index) => (
+            <motion.span 
+              key={text}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 + (index * 0.1), duration: 0.5 }}
+              className="flex items-center"
+            >
+              <span className="mr-2 text-primary">•</span>
+              <span className="cursor-pointer border-b border-current transition-all duration-200 hover:scale-105 hover:font-bold hover:text-blue-500">
+                {text}
+              </span>
+            </motion.span>
+          ))}
+          </motion.span>{" "}
+
+             Since 2021, we&apos;ve partnered with startups and
+              established businesses to deliver exceptional digital solutions.
+              Our team excels in end-to-end product development, from strategic
+              planning and design to implementation and deployment, ensuring
+              seamless collaboration and outstanding results for our clients.
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="grid grid-cols-2 gap-8 xl:grid-cols-3"
+            >
+              {aboutStats.map((stat, index) => (
+          <motion.div
+            key={stat.label}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 + (index * 0.1), duration: 0.5 }}
+            className="flex flex-col items-center text-center xl:items-start xl:text-start"
+          >
+            <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl">
+              {stat.value}
+            </span>
+            <span className="tracking-tight text-muted-foreground xl:text-lg">
+              {stat.label}
+            </span>
+          </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -332,45 +368,61 @@ export default function Home() {
 
             {/* Carousel */}
             <div className="mt-14">
-              <Carousel setApi={setCarouselApi} className="w-full">
+                <Carousel 
+                setApi={setCarouselApi} 
+                className="w-full"
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                >
                 <CarouselContent>
                   {projects.map((project) => (
-                    <CarouselItem key={project.title} className="md:basis-1/2">
-                      <Card id="tilt">
-                        <CardHeader className="p-0">
-                          <Link href={project.href} target="_blank" passHref>
-                            {project.image.endsWith(".webm") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            ) : (
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={600}
-                                height={300}
-                                quality={100}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            )}
-                          </Link>
-                        </CardHeader>
-                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                            {project.description}
-                          </CardTitle>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>
+                  <CarouselItem 
+                    key={project.title} 
+                    className="md:basis-1/2"
+                    onMouseEnter={() => carouselApi?.scrollTo(carouselApi.selectedScrollSnap())}
+                    onMouseLeave={() => {
+                    setTimeout(() => {
+                      carouselApi?.scrollNext();
+                    }, 3000);
+                    }}
+                  >
+                    <Card id="tilt">
+                    <CardHeader className="p-0">
+                      <Link href={project.href} target="_blank" passHref>
+                      {project.image.endsWith(".webm") ? (
+                        <video
+                        src={project.image}
+                        autoPlay
+                        loop
+                        muted
+                        className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                        />
+                      ) : (
+                        <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={600}
+                        height={300}
+                        quality={100}
+                        className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                        />
+                      )}
+                      </Link>
+                    </CardHeader>
+                    <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
+                      <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
+                      {project.description}
+                      </CardTitle>
+                    </CardContent>
+                    </Card>
+                  </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
+                <CarouselPrevious onClick={() => carouselApi?.scrollPrev()} />
+                <CarouselNext onClick={() => carouselApi?.scrollNext()} />
+                </Carousel>
               <div className="py-2 text-center text-sm text-muted-foreground">
                 <span className="font-semibold">
                   {current} / {count}
@@ -404,25 +456,25 @@ export default function Home() {
                   Need more info?
                   <br />
                   <span className="text-gradient clash-grotesk tracking-normal">
-                    I got you.
+                    We got you.
                   </span>
                 </h2>
                 <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Here are some of the services I offer. If you have any
+                  Here are some of the services we offer. If you have any
                   questions, feel free to reach out.
                 </p>
               </div>
               {services.map((service) => (
                 <div
                   key={service.service}
-                  className="flex flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
+                  className="flex h-[300px] w-full flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
                 >
                   <service.icon className="my-6 text-primary" size={20} />
                   <span className="text-lg tracking-tight text-foreground">
-                    {service.service}
+                  {service.service}
                   </span>
                   <span className="mt-2 tracking-tighter text-muted-foreground">
-                    {service.description}
+                  {service.description}
                   </span>
                 </div>
               ))}
@@ -431,7 +483,7 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" data-scroll-section className="my-64">
+        <section id="contact" data-scroll-section className="pb-64">
           <div
             data-scroll
             data-scroll-speed=".4"
@@ -446,8 +498,8 @@ export default function Home() {
               I&apos;m currently available for freelance work and open to
               discussing new projects.
             </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
-              <Button className="mt-6">Get in touch</Button>
+            <Link href="/" passHref>
+                <Button className="mt-6 font-normal text-secondary-foreground hover:scale-105 transition-transform duration-200">Get in touch</Button>
             </Link>
           </div>
         </section>
