@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { useRouter } from "next/router";
 import Preloader from "@/components/Preloader";
 import styles from "@/styles/Container.module.css";
+import Image from "next/image";
 
 type IconProps = {
   ["data-hide"]: boolean;
@@ -55,7 +56,6 @@ function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
 }
 
 function NavItem(props: NavProps) {
-
   const router = useRouter();
   const isActive = router.asPath === props.href; // Check if the current route matches the link's href
 
@@ -89,7 +89,7 @@ export default function Container(props: ContainerProps) {
   const meta = {
     title: "Unhash Labs",
     description: `Full-stack web agency and brand specialists.`,
-    image: "/assets/logo.webp",
+    image: "/assets/logo/logomain.svg",
     type: "website",
     ...customMeta,
   };
@@ -123,14 +123,8 @@ export default function Container(props: ContainerProps) {
         <meta name="robots" content="follow, index" />
         <meta name="theme-color" content="#7B82FE" />
         <meta content={meta.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://www.unhashlabs.xyz`}
-        />
-        <link
-          rel="canonical"
-          href={`https://www.unhashlabs.xyz`}
-        />
+        <meta property="og:url" content={`https://www.unhashlabs.xyz`} />
+        <link rel="canonical" href={`https://www.unhashlabs.xyz`} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Unhash Labs" />
         <meta property="og:description" content={meta.description} />
@@ -168,7 +162,12 @@ export default function Container(props: ContainerProps) {
           </button>
         </div>
         <Link href="/">
-          <span className="text-lg font-semibold">Unhash Labs</span>
+          <Image
+            src="/assets/logo/logomain.svg"
+            alt="logo"
+            width={200}
+            height={200}
+          />
         </Link>
 
         {/* Desktop menu */}
