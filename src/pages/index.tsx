@@ -68,33 +68,33 @@ const projects = [
 
 const services = [
   {
-    service: "Frontend Development",
+    service: "Software Development",
     description:
-      "Crafting responsive and dynamic user interfaces with cutting-edge technologies to deliver seamless web experiences.",
+      "Building scalable, high-performance software solutions tailored to your business needs using modern technologies.",
     icon: Code2,
   },
   {
-    service: "UX Design",
+    service: "Creative Design",
     description:
-      "Designing intuitive and user-centered interfaces that enhance engagement and drive conversions.",
+      "Delivering sleek, modern design systems that visually captivate and enhance user experience across all platforms.",
     icon: Frame,
   },
   {
-    service: "SEO Optimization",
+    service: "Marketing Strategy",
     description:
-      "Boosting your website's search engine rankings to attract more organic traffic and improve online visibility.",
-    icon: SearchCheck,
-  },
-  {
-    service: "Digital Marketing",
-    description:
-      "Implementing comprehensive digital strategies to effectively promote your brand across various online platforms.",
+      "Developing data-driven marketing campaigns to elevate your brand, increase reach, and drive measurable results.",
     icon: MonitorSmartphone,
   },
   {
     service: "Corporate Services",
     description:
-      "Providing tailored solutions to streamline your business operations and enhance corporate efficiency.",
+      "Providing strategic business support—from operations to communications—to streamline your growth and positioning.",
+    icon: SearchCheck,
+  },
+  {
+    service: "Celebrity & Brand Partnerships",
+    description:
+      "Connecting your brand with top-tier talent to create high-impact campaigns, endorsements, and cultural moments.",
     icon: Eye,
   },
 ];
