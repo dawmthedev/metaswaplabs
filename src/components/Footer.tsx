@@ -146,7 +146,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="relative flex items-center justify-between px-6 py-6">
-          <p className="text-xs text-gray-500">© Metaswap, LLC</p>
+          <p className="text-xs text-gray-500">Powered by Metaswap</p>
           <Link
             href="https://calendly.com/metaswapllc/30min"
             target="_blank"

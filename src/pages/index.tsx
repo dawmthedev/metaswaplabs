@@ -226,7 +226,10 @@ export default function Home() {
               data-scroll-speed=".06"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-              <Link href="/" passHref>
+              <Link
+                href="https://calendly.com/metaswapllc/30min?month=2025-03"
+                passHref
+              >
                 <Button>
                   Get in touch <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -285,11 +288,11 @@ export default function Home() {
                 className="mb-10 inline-flex flex-wrap gap-1.5"
               >
                 {[
-                  "software development",
-                  "corporate solutions",
-                  "UI/UX design",
-                  "cloud architecture",
-                  "digital transformation",
+                  "Software Development",
+                  "Corporate Services",
+                  "Creative Design",
+                  "Cloud Infrastructure",
+                  "Brand & Digital Strategy",
                 ].map((text, index) => (
                   <motion.span
                     key={text}
