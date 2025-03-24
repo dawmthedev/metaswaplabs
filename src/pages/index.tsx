@@ -31,7 +31,6 @@ const aboutStats = [
   { label: "Years of Experience", value: "4+" },
   { label: "Projects Delivered", value: "300+" },
   { label: "Global Clients", value: "150+" },
- 
 ];
 
 const projects = [
@@ -191,9 +190,10 @@ export default function Home() {
               data-scroll-speed=".09"
               className="flex flex-row items-center space-x-1.5"
             >
-              <span className={styles.pill}>next.js</span>
-              <span className={styles.pill}>tailwindcss</span>
-              <span className={styles.pill}>typescript</span>
+              <span className={styles.pill}>Software</span>
+              <span className={styles.pill}>Marketing</span>
+              <span className={styles.pill}>Strategy</span>
+              <span className={styles.pill}>Growth</span>
             </div>
             <div>
               <h1
@@ -207,7 +207,7 @@ export default function Home() {
                   <br />
                 </span>
                 <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  Unhash Labs
+                  Metaswap Labs
                 </span>
               </h1>
               <p
@@ -216,8 +216,8 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced full-stack web agency  with a passion for
-                crafting unique digital experiences.
+                An experienced full-stack web agency with a passion for crafting
+                unique digital experiences.
               </p>
             </div>
             <span
@@ -269,69 +269,69 @@ export default function Home() {
             data-scroll-position="top"
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="py-16 pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]"
             >
-              We are a cutting-edge full-stack development agency specializing in{" "}
-          <motion.span 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="inline-flex flex-wrap gap-1.5 mb-10"
-          >
-          {[
-            "software development",
-            "corporate solutions",
-            "UI/UX design",
-            "cloud architecture",
-            "digital transformation",
-          ].map((text, index) => (
-            <motion.span 
-              key={text}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 + (index * 0.1), duration: 0.5 }}
-              className="flex items-center"
-            >
-              <span className="mr-2 text-primary">•</span>
-              <span className="cursor-pointer border-b border-current transition-all duration-200 hover:scale-105 hover:font-bold hover:text-blue-500">
-                {text}
-              </span>
-            </motion.span>
-          ))}
-          </motion.span>{" "}
-
-             Since 2021, we&apos;ve partnered with startups and
-              established businesses to deliver exceptional digital solutions.
-              Our team excels in end-to-end product development, from strategic
-              planning and design to implementation and deployment, ensuring
-              seamless collaboration and outstanding results for our clients.
+              We are a cutting-edge full-stack development agency specializing
+              in{" "}
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="mb-10 inline-flex flex-wrap gap-1.5"
+              >
+                {[
+                  "software development",
+                  "corporate solutions",
+                  "UI/UX design",
+                  "cloud architecture",
+                  "digital transformation",
+                ].map((text, index) => (
+                  <motion.span
+                    key={text}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
+                    className="flex items-center"
+                  >
+                    <span className="mr-2 text-primary">•</span>
+                    <span className="cursor-pointer border-b border-current transition-all duration-200 hover:scale-105 hover:font-bold hover:text-blue-500">
+                      {text}
+                    </span>
+                  </motion.span>
+                ))}
+              </motion.span>{" "}
+              Since 2021, we&apos;ve partnered with startups and established
+              businesses to deliver exceptional digital solutions. Our team
+              excels in end-to-end product development, from strategic planning
+              and design to implementation and deployment, ensuring seamless
+              collaboration and outstanding results for our clients.
             </motion.h2>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
               className="grid grid-cols-2 gap-8 xl:grid-cols-3"
             >
               {aboutStats.map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 + (index * 0.1), duration: 0.5 }}
-            className="flex flex-col items-center text-center xl:items-start xl:text-start"
-          >
-            <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl">
-              {stat.value}
-            </span>
-            <span className="tracking-tight text-muted-foreground xl:text-lg">
-              {stat.label}
-            </span>
-          </motion.div>
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
+                  className="flex flex-col items-center text-center xl:items-start xl:text-start"
+                >
+                  <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl">
+                    {stat.value}
+                  </span>
+                  <span className="tracking-tight text-muted-foreground xl:text-lg">
+                    {stat.label}
+                  </span>
+                </motion.div>
               ))}
             </motion.div>
           </div>
@@ -368,61 +368,63 @@ export default function Home() {
 
             {/* Carousel */}
             <div className="mt-14">
-                <Carousel 
-                setApi={setCarouselApi} 
+              <Carousel
+                setApi={setCarouselApi}
                 className="w-full"
                 opts={{
                   align: "start",
                   loop: true,
                 }}
-                >
+              >
                 <CarouselContent>
                   {projects.map((project) => (
-                  <CarouselItem 
-                    key={project.title} 
-                    className="md:basis-1/2"
-                    onMouseEnter={() => carouselApi?.scrollTo(carouselApi.selectedScrollSnap())}
-                    onMouseLeave={() => {
-                    setTimeout(() => {
-                      carouselApi?.scrollNext();
-                    }, 3000);
-                    }}
-                  >
-                    <Card id="tilt">
-                    <CardHeader className="p-0">
-                      <Link href={project.href} target="_blank" passHref>
-                      {project.image.endsWith(".webm") ? (
-                        <video
-                        src={project.image}
-                        autoPlay
-                        loop
-                        muted
-                        className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                        />
-                      ) : (
-                        <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={600}
-                        height={300}
-                        quality={100}
-                        className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                        />
-                      )}
-                      </Link>
-                    </CardHeader>
-                    <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                      <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                      {project.description}
-                      </CardTitle>
-                    </CardContent>
-                    </Card>
-                  </CarouselItem>
+                    <CarouselItem
+                      key={project.title}
+                      className="md:basis-1/2"
+                      onMouseEnter={() =>
+                        carouselApi?.scrollTo(carouselApi.selectedScrollSnap())
+                      }
+                      onMouseLeave={() => {
+                        setTimeout(() => {
+                          carouselApi?.scrollNext();
+                        }, 3000);
+                      }}
+                    >
+                      <Card id="tilt">
+                        <CardHeader className="p-0">
+                          <Link href={project.href} target="_blank" passHref>
+                            {project.image.endsWith(".webm") ? (
+                              <video
+                                src={project.image}
+                                autoPlay
+                                loop
+                                muted
+                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                              />
+                            ) : (
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                width={600}
+                                height={300}
+                                quality={100}
+                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                              />
+                            )}
+                          </Link>
+                        </CardHeader>
+                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
+                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
+                            {project.description}
+                          </CardTitle>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
                   ))}
                 </CarouselContent>
                 <CarouselPrevious onClick={() => carouselApi?.scrollPrev()} />
                 <CarouselNext onClick={() => carouselApi?.scrollNext()} />
-                </Carousel>
+              </Carousel>
               <div className="py-2 text-center text-sm text-muted-foreground">
                 <span className="font-semibold">
                   {current} / {count}
@@ -471,10 +473,10 @@ export default function Home() {
                 >
                   <service.icon className="my-6 text-primary" size={20} />
                   <span className="text-lg tracking-tight text-foreground">
-                  {service.service}
+                    {service.service}
                   </span>
                   <span className="mt-2 tracking-tighter text-muted-foreground">
-                  {service.description}
+                    {service.description}
                   </span>
                 </div>
               ))}
@@ -499,7 +501,9 @@ export default function Home() {
               discussing new projects.
             </p>
             <Link href="/" passHref>
-                <Button className="mt-6 font-normal text-secondary-foreground hover:scale-105 transition-transform duration-200">Get in touch</Button>
+              <Button className="mt-6 font-normal text-secondary-foreground transition-transform duration-200 hover:scale-105">
+                Get in touch
+              </Button>
             </Link>
           </div>
         </section>

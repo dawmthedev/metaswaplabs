@@ -38,11 +38,11 @@ const variants = {
 };
 
 const navLinks = [
-  { href: "#home", text: "Home" },
-  { href: "#about", text: "About" },
-  { href: "#projects", text: "Projects" },
-  { href: "#services", text: "Services" },
-  { href: "#contact", text: "Contact" },
+  { href: "#home", text: "HOME" },
+  { href: "#about", text: "ABOUT" },
+  { href: "#projects", text: "PROJECT" },
+  { href: "#services", text: "SERVICES" },
+  { href: "#contact", text: "CONTACT" },
 ];
 
 function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -57,7 +57,7 @@ function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
 
 function NavItem(props: NavProps) {
   const router = useRouter();
-  const isActive = router.asPath === props.href; // Check if the current route matches the link's href
+  const isActive = router.asPath === props.href; // Fix: match the link href to router path
 
   return (
     <motion.li
@@ -71,7 +71,11 @@ function NavItem(props: NavProps) {
       <a
         href={props.href}
         onClick={handleClick}
-        className={cn(isActive ? "nav-active" : "", "nav-link")}
+        className={cn(
+          isActive ? "bg-red-500" : "", // Highlight active link
+          "text-uppercase px-8 py-4 text-3xl transition duration-300",
+          "hover:bg-blue-500 hover:text-white",
+        )}
       >
         {props.text}
       </a>
@@ -87,7 +91,7 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Unhash Labs",
+    title: "Metaswap Labs",
     description: `Full-stack web agency and brand specialists.`,
     image: "/assets/logo/logomain.svg",
     type: "website",
@@ -215,7 +219,7 @@ export default function Container(props: ContainerProps) {
                         href={link.href}
                         text={link.text}
                         i={i}
-                        className="text-xl"
+                        className=" text-xl"
                       />
                     </button>
                   ))}
@@ -242,14 +246,15 @@ export default function Container(props: ContainerProps) {
           }
         `}</style>
       </nav>
-
       {/* Preloader */}
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-
       {/* Main content */}
-      <main className={cn("container", props.className)}>{children}</main>
+      <main className={cn("container p-6", props.className)}>
+        {children}
+      </main>{" "}
+      {/* Maintain padding for content */}
       <Footer />
     </>
   );
