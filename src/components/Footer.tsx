@@ -6,9 +6,16 @@ export default function Footer() {
       {/* Call to Action Section */}
       <div className="relative flex flex-col items-center justify-center py-20">
         <div className="relative">
-          <button className="start-project-button relative rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-gray-300">
-            Start Your Project
-          </button>
+          <a
+            href="https://calendly.com/metaswapllc/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="start-project-button relative rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-gray-300">
+              Start Your Project
+            </button>
+          </a>
+
           <style jsx>{`
             .start-project-button {
               border: 2px solid transparent;
