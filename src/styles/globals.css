@@ -22,6 +22,7 @@
 
     --secondary: 141 100% 70%; /* Lighter fluorescent green for secondary elements */
     --secondary-foreground: 141 50% 7%;
+    --secondary-foreground: 0 0% 100%; /* White */
 
     --muted: 141 30% 20%; /* Muted dark green for less prominent elements */
     --muted-foreground: 141 40% 80%;

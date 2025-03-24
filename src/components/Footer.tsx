@@ -141,7 +141,9 @@ export default function Footer() {
         <div className="relative flex items-center justify-between px-6 py-6">
           <p className="text-xs text-gray-500">© Metaswap, LLC</p>
           <Link
-            href="#"
+            href="https://calendly.com/metaswapllc/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center space-x-2 rounded-full bg-green-500 px-4 py-2 text-black hover:bg-green-600"
           >
             <i className="fas fa-phone-alt"></i>

@@ -367,7 +367,7 @@ export default function Home() {
             </p>
 
             {/* Carousel */}
-            <div className="mt-14">
+            {/* <div className="mt-14">
               <Carousel
                 setApi={setCarouselApi}
                 className="w-full"
@@ -431,7 +431,7 @@ export default function Home() {
                 </span>{" "}
                 projects
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
