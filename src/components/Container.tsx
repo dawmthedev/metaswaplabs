@@ -87,6 +87,13 @@ export default function Container(props: ContainerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const font = {
+    fontFamily: "'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    fontWeight: "700",
+    fontSize: "2rem",
+    letterSpacing: "-0.5px",
+    margin: "0",
+  };
 
   const { children, ...customMeta } = props;
   const router = useRouter();
@@ -166,12 +173,13 @@ export default function Container(props: ContainerProps) {
           </button>
         </div>
         <Link href="/">
-          <Image
+          {/* <Image
             src="/assets/logo/logomain.svg"
             alt="logo"
             width={200}
             height={200}
-          />
+          /> */}
+          <h2 style={font}>Metaswap Labs</h2>
         </Link>
 
         {/* Desktop menu */}

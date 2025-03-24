@@ -6,37 +6,38 @@
 
 @layer base {
   :root {
-    --background: 220 15% 10%; /* Dark blue background */
-    --foreground: 210 40% 98%; /* Light foreground for contrast */
-  
-    --card: 220 15% 12%; /* Slightly lighter dark blue for cards */
-    --card-foreground: 210 40% 98%;
-  
-    --popover: 220 15% 12%;
-    --popover-foreground: 210 40% 98%;
-  
-    --primary: 210 100% 56%; /* Baby blue for primary elements */
+    --background: 141 50% 7%; /* Dark green background */
+    --background: 0 0% 0%; /* Pure black background */
+
+    --foreground: 141 100% 98%; /* Light green foreground for contrast */
+
+    --card: 141 50% 10%; /* Slightly lighter dark green for cards */
+    --card-foreground: 141 100% 98%;
+
+    --popover: 141 50% 10%;
+    --popover-foreground: 141 100% 98%;
+
+    --primary: 141 100% 50%; /* Fluorescent green for primary elements */
     --primary-foreground: 0 0% 0%;
-  
-    --secondary: 210 100% 75%; /* Lighter baby blue for secondary elements */
-    --secondary-foreground: 220 15% 10%;
-  
-    --muted: 220 10% 20%; /* Muted dark blue for less prominent elements */
-    --muted-foreground: 210 20% 80%;
-  
-    --accent: 210 100% 56%; /* Baby blue for accent elements */
-    --accent-foreground: 210 40% 98%;
-  
+
+    --secondary: 141 100% 70%; /* Lighter fluorescent green for secondary elements */
+    --secondary-foreground: 141 50% 7%;
+
+    --muted: 141 30% 20%; /* Muted dark green for less prominent elements */
+    --muted-foreground: 141 40% 80%;
+
+    --accent: 141 100% 50%; /* Fluorescent green for accent elements */
+    --accent-foreground: 141 100% 98%;
+
     --destructive: 0 62.8% 30.6%; /* Keeping the same red for destructive actions */
-    --destructive-foreground: 210 40% 98%;
-  
-    --border: 220 10% 20%; /* Dark blue for borders */
-    --input: 220 10% 20%; /* Dark blue for input backgrounds */
-    --ring: 210 100% 75%; /* Baby blue for focus rings */
-  
+    --destructive-foreground: 141 100% 98%;
+
+    --border: 141 30% 20%; /* Dark green for borders */
+    --input: 141 30% 20%; /* Dark green for input backgrounds */
+    --ring: 141 100% 70%; /* Fluorescent green for focus rings */
+
     --radius: 0.5rem;
   }
-  
 }
 
 /* global elements */
@@ -56,7 +57,7 @@
     @apply antialiased;
   }
   body {
-    @apply bg-background text-foreground cursor-wait;
+    @apply cursor-wait bg-background text-foreground;
   }
   section {
     scroll-margin-top: 60px;
