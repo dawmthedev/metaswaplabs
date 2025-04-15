@@ -6,36 +6,35 @@
 
 @layer base {
   :root {
-    --background: 141 50% 7%; /* Dark green background */
+    --background: 174 41% 61%; /* Tiffany Blue background */
     --background: 0 0% 0%; /* Pure black background */
 
-    --foreground: 141 100% 98%; /* Light green foreground for contrast */
+    --foreground: 174 41% 76%; /* Tiffany Blue foreground for contrast */
 
-    --card: 141 50% 10%; /* Slightly lighter dark green for cards */
-    --card-foreground: 141 100% 98%;
+    --card: 174 41% 65%; /* Slightly lighter Tiffany Blue for cards */
+    --card-foreground: 174 100% 98%;
 
-    --popover: 141 50% 10%;
-    --popover-foreground: 141 100% 98%;
+    --popover: 174 41% 65%;
+    --popover-foreground: 174 100% 98%;
 
-    --primary: 141 100% 50%; /* Fluorescent green for primary elements */
+    --primary: 174 41% 61%; /* Tiffany Blue for primary elements */
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 141 100% 70%; /* Lighter fluorescent green for secondary elements */
-    --secondary-foreground: 141 50% 7%;
+    --secondary: 174 41% 80%; /* Lighter Tiffany Blue for secondary elements */
     --secondary-foreground: 0 0% 100%; /* White */
 
-    --muted: 141 30% 20%; /* Muted dark green for less prominent elements */
-    --muted-foreground: 141 40% 80%;
+    --muted: 174 41% 50%; /* Muted Tiffany Blue for less prominent elements */
+    --muted-foreground: 174 41% 85%;
 
-    --accent: 141 100% 50%; /* Fluorescent green for accent elements */
-    --accent-foreground: 141 100% 98%;
+    --accent: 174 41% 61%; /* Tiffany Blue for accent elements */
+    --accent-foreground: 174 100% 98%;
 
     --destructive: 0 62.8% 30.6%; /* Keeping the same red for destructive actions */
-    --destructive-foreground: 141 100% 98%;
+    --destructive-foreground: 174 100% 98%;
 
-    --border: 141 30% 20%; /* Dark green for borders */
-    --input: 141 30% 20%; /* Dark green for input backgrounds */
-    --ring: 141 100% 70%; /* Fluorescent green for focus rings */
+    --border: 174 41% 50%; /* Muted Tiffany Blue for borders */
+    --input: 174 41% 50%; /* Muted Tiffany Blue for input backgrounds */
+    --ring: 174 41% 80%; /* Lighter Tiffany Blue for focus rings */
 
     --radius: 0.5rem;
   }

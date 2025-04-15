@@ -183,76 +183,78 @@ export default function Home() {
           data-scroll-section
           className="mt-40 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between"
         >
-          <div className={styles.intro}>
-            <div
-              data-scroll
-              data-scroll-direction="horizontal"
-              data-scroll-speed=".09"
-              className="flex flex-row items-center space-x-1.5"
-            >
-              <span className={styles.pill}>Software</span>
-              <span className={styles.pill}>Marketing</span>
-              <span className={styles.pill}>Strategy</span>
-              <span className={styles.pill}>Growth</span>
-            </div>
-            <div>
-              <h1
+          <div className={styles.heroContainer}>
+            <div className="flex h-screen flex-col items-center justify-center space-y-6 px-4 text-center">
+              <div
                 data-scroll
-                data-scroll-enable-touch-speed
-                data-scroll-speed=".06"
                 data-scroll-direction="horizontal"
+                data-scroll-speed=".09"
+                className="flex flex-row items-center justify-center space-x-4"
               >
-                <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
-                  Hello, We&apos;re
-                  <br />
-                </span>
-                <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  Metaswap Labs
-                </span>
-              </h1>
-              <p
-                data-scroll
-                data-scroll-enable-touch-speed
-                data-scroll-speed=".06"
-                className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
-              >
-                An experienced full-stack web agency with a passion for crafting
-                unique digital experiences.
-              </p>
-            </div>
-            <span
-              data-scroll
-              data-scroll-enable-touch-speed
-              data-scroll-speed=".06"
-              className="flex flex-row items-center space-x-1.5 pt-6"
-            >
-              <Link
-                href="https://calendly.com/metaswapllc/30min?month=2025-03"
-                passHref
-              >
-                <Button>
-                  Get in touch <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
-              <Button
-                variant="outline"
-                onClick={() => scrollTo(document.querySelector("#about"))}
-              >
-                Learn more
-              </Button>
-            </span>
+                <span className={styles.pill}>Software</span>
+                <span className={styles.pill}>Marketing</span>
+                <span className={styles.pill}>Strategy</span>
+                <span className={styles.pill}>Growth</span>
+              </div>
 
-            <div
-              className={cn(
-                styles.scroll,
-                isScrolled && styles["scroll--hidden"],
-              )}
-            >
-              Scroll to discover{" "}
-              <TriangleDownIcon className="mt-1 animate-bounce" />
+              <div>
+                <h1
+                  data-scroll
+                  data-scroll-enable-touch-speed
+                  data-scroll-speed=".06"
+                  data-scroll-direction="horizontal"
+                  className="text-6xl tracking-tighter text-foreground 2xl:text-8xl"
+                >
+                  <span>
+                    Hello, We&apos;re
+                    <br />
+                  </span>
+                  <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
+                    Metaswap Labs
+                  </span>
+                </h1>
+                <p
+                  data-scroll
+                  data-scroll-enable-touch-speed
+                  data-scroll-speed=".06"
+                  className="mx-auto mt-3 max-w-lg text-lg tracking-tight text-muted-foreground 2xl:text-xl"
+                >
+                  An experienced full-stack web agency with a passion for
+                  crafting unique digital experiences.
+                </p>
+              </div>
+
+              <div className="flex flex-col items-center justify-center space-y-4 pt-6 sm:flex-row sm:space-x-4 sm:space-y-0">
+                <Link
+                  href="https://calendly.com/metaswapllc/30min?month=2025-03"
+                  passHref
+                >
+                  <Button className="w-full sm:w-auto">
+                    Get in touch <ChevronRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Button
+                  variant="outline"
+                  onClick={() => scrollTo(document.querySelector("#about"))}
+                  className="w-full sm:w-auto"
+                >
+                  Learn more
+                </Button>
+              </div>
+
+              <div
+                className={cn(
+                  styles.scroll,
+                  isScrolled && styles["scroll--hidden"],
+                )}
+              >
+                Scroll to discover{" "}
+                <TriangleDownIcon className="mt-1 animate-bounce" />
+              </div>
             </div>
           </div>
-          <div
+
+          {/* <div
             data-scroll
             data-scroll-speed="-.01"
             id={styles["canvas-container"]}
@@ -261,7 +263,7 @@ export default function Home() {
             <Suspense fallback={<span>Loading...</span>}>
               <Spline scene="/assets/scene.splinecode" />
             </Suspense>
-          </div>
+          </div> */}
         </section>
 
         {/* About */}

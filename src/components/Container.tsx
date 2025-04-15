@@ -42,7 +42,7 @@ const navLinks = [
   { href: "#about", text: "ABOUT" },
   { href: "#projects", text: "PROJECT" },
   { href: "#services", text: "SERVICES" },
-  { href: "#contact", text: "CONTACT" },
+  // { href: "#contact", text: "CONTACT" },
 ];
 
 function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -194,6 +194,8 @@ export default function Container(props: ContainerProps) {
             />
           ))}
         </ul>
+
+        <button className="text-2xl font-extrabold">Contact</button>
 
         {/* Mobile menu */}
         <AnimatePresence key="menu">
