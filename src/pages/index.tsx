@@ -181,7 +181,7 @@ export default function Home() {
         <section
           id="home"
           data-scroll-section
-          className="mt-40 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between"
+          className="mt-40 flex w-full flex-col items-center justify-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-center"
         >
           <div className={styles.heroContainer}>
             <div className="flex h-screen flex-col items-center justify-center space-y-6 px-4 text-center">
