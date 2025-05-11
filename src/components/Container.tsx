@@ -90,7 +90,7 @@ export default function Container(props: ContainerProps) {
   const font = {
     fontFamily: "'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
     fontWeight: "700",
-    fontSize: "2rem",
+    fontSize: "1rem",
     letterSpacing: "-0.5px",
     margin: "0",
   };
@@ -172,14 +172,22 @@ export default function Container(props: ContainerProps) {
             <CrossIcon data-hide={!isOpen} />
           </button>
         </div>
-        <Link href="/">
-          {/* <Image
-            src="/assets/logo/logomain.svg"
+
+        <Link
+          href="/"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+          }}
+        >
+          <Image
+            src="/assets/logo/logo.png"
             alt="logo"
-            width={200}
-            height={200}
-          /> */}
-          <h2 style={font}>Metaswap Labs</h2>
+            width={30}
+            height={30}
+          />
+          <p style={{ ...font, marginLeft: "0.5rem" }}>Metaswap Labs</p>
         </Link>
 
         {/* Desktop menu */}

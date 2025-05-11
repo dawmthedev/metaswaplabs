@@ -501,10 +501,7 @@ export default function Home() {
               Let&apos;s work{" "}
               <span className="text-gradient clash-grotesk">together.</span>
             </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;m currently available for freelance work and open to
-              discussing new projects.
-            </p>
+
             <Link href="/" passHref>
               <Button className="mt-6 font-normal text-secondary-foreground transition-transform duration-200 hover:scale-105">
                 Get in touch
