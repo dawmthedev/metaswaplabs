@@ -203,6 +203,14 @@ export default function Container(props: ContainerProps) {
           ))}
         </ul>
 
+        {/* Hide contact on mobile to avoid overlapping the hamburger menu */}
+        <Link
+          href="/contact"
+          className="hidden px-4 py-2 text-sm md:inline-block"
+        >
+          Contact
+        </Link>
+
         <Link
           href="https://calendly.com/metaswapllc/30min"
           className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 sm:inline-flex"
@@ -237,7 +245,7 @@ export default function Container(props: ContainerProps) {
               </div>
               <div className="flex h-full flex-col items-start justify-between overflow-y-auto">
                 {/* Links */}
-                <ul className="flex min-h-fit w-full flex-col items-start space-y-6 px-[22px] py-[58px]">
+                <ul className="flex min-h-fit w-full flex-col items-start space-y-6 px-4 py-6">
                   {navLinks.map((link, i) => (
                     <button key={link.href} onClick={() => setIsOpen(false)}>
                       <NavItem
@@ -249,8 +257,15 @@ export default function Container(props: ContainerProps) {
                     </button>
                   ))}
                   <Link
+                    href="/contact"
+                    className="text-xl"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                  <Link
                     href="https://calendly.com/metaswapllc/30min"
-                    className="mt-6 inline-flex rounded-md bg-primary px-4 py-2 text-primary-foreground"
+                    className="w-full rounded-md bg-primary px-4 py-3 text-center text-primary-foreground"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

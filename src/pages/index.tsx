@@ -96,9 +96,9 @@ export default function Home() {
           <p data-scroll data-scroll-enable-touch-speed data-scroll-speed=".06" className="mx-auto max-w-2xl text-lg tracking-tight text-muted-foreground 2xl:text-xl">
             Metaswap Labs helps businesses save time, grow revenue, and scale operations through plug-and-play automation systems.
           </p>
-          <div className="flex flex-col items-center justify-center space-y-4 pt-6 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <div className="flex flex-col items-center text-center px-4">
             <Link href="https://calendly.com/metaswapllc/30min" passHref>
-              <button className="w-full rounded-md bg-primary px-6 py-3 text-primary-foreground sm:w-auto">
+              <button className="mt-6 px-6 py-3 rounded-md bg-metaswapBlue text-black font-semibold shadow-md hover:bg-opacity-90 transition">
                 Get Automated <ChevronRight className="ml-1 h-4 w-4" />
               </button>
             </Link>

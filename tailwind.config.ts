@@ -49,6 +49,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        metaswapBlue: "#7B82FE",
       },
       borderRadius: {
         lg: "var(--radius)",
