@@ -5,9 +5,9 @@
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/",
-    "name": "Unhashlabs",
-    "short_name": "Unhashlabs",
-    "description": "Full-stack website developer and TypeScript enthusiast.",
+    "name": "Metaswap Labs",
+    "short_name": "Metaswap",
+    "description": "Premium AI automation company providing plug-and-play automations.",
     "icons": [
         {
             "src": "/icon-192x192.png",

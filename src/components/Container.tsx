@@ -39,10 +39,10 @@ const variants = {
 
 const navLinks = [
   { href: "#home", text: "HOME" },
-  { href: "#about", text: "ABOUT" },
-  { href: "#projects", text: "PROJECT" },
-  { href: "#services", text: "SERVICES" },
-  // { href: "#contact", text: "CONTACT" },
+  { href: "#library", text: "AUTOMATIONS" },
+  { href: "#how", text: "HOW IT WORKS" },
+  { href: "#benefits", text: "BENEFITS" },
+  { href: "#why", text: "WHY US" },
 ];
 
 function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -134,15 +134,15 @@ export default function Container(props: ContainerProps) {
         <meta name="robots" content="follow, index" />
         <meta name="theme-color" content="#7B82FE" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://www.unhashlabs.xyz`} />
-        <link rel="canonical" href={`https://www.unhashlabs.xyz`} />
+        <meta property="og:url" content={`https://www.metaswaplabs.com`} />
+        <link rel="canonical" href={`https://www.metaswaplabs.com`} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Unhash Labs" />
+        <meta property="og:site_name" content="Metaswap Labs" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="Unhash Labs" />
+        <meta name="twitter:site" content="Metaswap Labs" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
