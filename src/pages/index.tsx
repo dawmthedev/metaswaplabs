@@ -1,33 +1,19 @@
 import Container from "@/components/Container";
 import { useEffect, useRef, useState } from "react";
-import { ChevronRight, MoveRight } from "lucide-react";
+import { ChevronRight, MoveRight, Slack, Mail, Send } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { cn, scrollTo } from "@/lib/utils";
 import styles from "@/styles/Home.module.css";
 import VanillaTilt from "vanilla-tilt";
+import { automations } from "@/data/automations";
 
 const tags = [
   "AI-Driven",
-  "Growth Automation",
-  "CRM Ready",
+  "CRM Automation",
+  "Plug & Play",
+  "Growth Systems",
   "Instant Setup",
-  "100% Done-For-You",
-];
-
-const automations = [
-  {
-    title: "TikTok Comment Scraper → CRM",
-    description: "Track user engagement & log qualified leads in real-time.",
-  },
-  {
-    title: "Auto-Send DMs Based on Hashtag Activity",
-    description: "Engage users the moment they engage with your space.",
-  },
-  {
-    title: "Leads → CRM → Auto Email",
-    description: "Route and respond to inbound leads on autopilot.",
-  },
 ];
 
 export default function Home() {
@@ -127,10 +113,31 @@ export default function Home() {
           <h2 className="text-4xl font-semibold tracking-tight xl:text-6xl">What Can You Automate?</h2>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 md:grid-cols-2 lg:grid-cols-3">
             {automations.map((auto) => (
-              <div key={auto.title} className="tilt flex flex-col items-start rounded-md bg-white/5 p-6 text-left shadow-md backdrop-blur">
-                <h3 className="text-lg font-medium tracking-tight text-foreground">{auto.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{auto.description}</p>
-                <Link href="https://calendly.com/metaswapllc/30min" passHref className="mt-4 inline-flex items-center text-primary hover:underline">
+              <div
+                key={auto.title}
+                className="tilt flex flex-col items-start rounded-md bg-white/5 p-6 text-left shadow-md backdrop-blur"
+              >
+                <div className="flex items-center space-x-3">
+                  {auto.icon === "tiktok" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="h-5 w-5 fill-current"
+                    >
+                      <path d="M12.5 2c1.385 0 2.879.47 4 .969v3.157c-.882-.321-1.942-.614-3-.708v8.631a4 4 0 11-4-4h.5V7.09A8.501 8.501 0 0012.5 2z" />
+                    </svg>
+                  )}
+                  {auto.icon === "slack" && <Slack className="h-5 w-5" />}
+                  {auto.icon === "mail" && <Mail className="h-5 w-5" />}
+                  {auto.icon === "send" && <Send className="h-5 w-5" />}
+                  <h3 className="text-lg font-medium tracking-tight text-foreground">{auto.title}</h3>
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground">{auto.subtitle}</p>
+                <Link
+                  href="https://calendly.com/metaswapllc/30min"
+                  passHref
+                  className="mt-4 inline-flex items-center text-primary hover:underline"
+                >
                   Talk to Us <MoveRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
@@ -146,13 +153,13 @@ export default function Home() {
               <span className="text-2xl font-semibold">1. You Tell Us What You Need</span>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <span className="text-2xl font-semibold">2. We Build or Enable It Instantly</span>
+              <span className="text-2xl font-semibold">2. We Enable the Automation</span>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <span className="text-2xl font-semibold">3. You Watch the Results Flow In</span>
+              <span className="text-2xl font-semibold">3. You Watch Results Happen</span>
             </div>
           </div>
-          <p className="mx-auto max-w-xl text-muted-foreground">No learning curve. No dashboards. Just done-for-you automation.</p>
+          <p className="mx-auto max-w-xl text-muted-foreground">No dashboards. No headaches. Just results.</p>
         </section>
 
         {/* Benefits */}
@@ -163,13 +170,13 @@ export default function Home() {
               <span className="text-xl font-semibold">💼 100+ Hours Saved Per Month</span>
             </div>
             <div className="rounded-md bg-white/5 p-6 backdrop-blur">
-              <span className="text-xl font-semibold">📈 3x Lead Conversion Speed</span>
+              <span className="text-xl font-semibold">📈 3x Lead Response Speed</span>
             </div>
             <div className="rounded-md bg-white/5 p-6 backdrop-blur">
-              <span className="text-xl font-semibold">🤖 24/7 Execution With Zero Downtime</span>
+              <span className="text-xl font-semibold">🤖 24/7 Automation Reliability</span>
             </div>
             <div className="rounded-md bg-white/5 p-6 backdrop-blur">
-              <span className="text-xl font-semibold">🛠️ Fully Managed Setup and Monitoring</span>
+              <span className="text-xl font-semibold">🛠️ Hands-Off Setup</span>
             </div>
           </div>
         </section>
@@ -180,6 +187,22 @@ export default function Home() {
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
             We’ve built automations for creators, founders, and teams who don’t have time to micromanage software. We deliver full-stack AI automations with real business impact — without the guesswork or noise.
           </p>
+        </section>
+
+        {/* Social Proof */}
+        <section id="testimonials" data-scroll-section className="my-32 space-y-10 bg-gradient-to-b from-background via-transparent to-background py-20 text-center">
+          <h2 className="text-4xl font-semibold tracking-tight xl:text-6xl text-foreground">What Our Clients Say</h2>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 md:grid-cols-3">
+            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+              <p className="text-sm text-muted-foreground">“My sales process is 100% automated now — I don’t even open the CRM manually.”</p>
+            </div>
+            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+              <p className="text-sm text-muted-foreground">“It feels like I hired 3 new team members. This is the real AI revolution.”</p>
+            </div>
+            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+              <p className="text-sm text-muted-foreground">“Metaswap saved us from spending $20k/month on cold outreach tools.”</p>
+            </div>
+          </div>
         </section>
 
         {/* CTA Strip */}

@@ -99,7 +99,7 @@ export default function Container(props: ContainerProps) {
   const router = useRouter();
   const meta = {
     title: "Metaswap Labs",
-    description: `Full-stack web agency and brand specialists.`,
+    description: `Premium AI automation & integration platform.`,
     image: "/assets/logo/logomain.svg",
     type: "website",
     ...customMeta,
@@ -203,7 +203,14 @@ export default function Container(props: ContainerProps) {
           ))}
         </ul>
 
-        <button className="text-2xl font-extrabold">Contact</button>
+        <Link
+          href="https://calendly.com/metaswapllc/30min"
+          className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 sm:inline-flex"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get Automated
+        </Link>
 
         {/* Mobile menu */}
         <AnimatePresence key="menu">
@@ -241,6 +248,14 @@ export default function Container(props: ContainerProps) {
                       />
                     </button>
                   ))}
+                  <Link
+                    href="https://calendly.com/metaswapllc/30min"
+                    className="mt-6 inline-flex rounded-md bg-primary px-4 py-2 text-primary-foreground"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Automated
+                  </Link>
                 </ul>
 
                 {/* Footer */}
