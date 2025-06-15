@@ -31,6 +31,7 @@ export default function Home() {
         el: refScrollContainer.current ?? new HTMLElement(),
         smooth: true,
       });
+      
     }
 
     function handleScroll() {
