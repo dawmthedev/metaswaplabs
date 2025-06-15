@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ChevronRight, MoveRight, Slack, Mail, Send } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
@@ -83,31 +84,39 @@ export default function Home() {
           data-scroll-section
           className="flex min-h-[calc(100vh-160px)] w-full items-center justify-center py-20"
         >
-          <div className="container mx-auto flex max-w-6xl flex-col items-center justify-center space-y-8 px-4 text-center">
-            <div data-scroll data-scroll-direction="horizontal" data-scroll-speed=".09" className="flex flex-wrap justify-center gap-3">
-              {tags.map((t) => (
-                <span key={t} className={`${styles.pill} mx-1`}>
-                  {t}
-                </span>
-              ))}
-            </div>
-            <h1 data-scroll data-scroll-enable-touch-speed data-scroll-speed=".06" className="text-5xl font-bold leading-tight tracking-tighter text-foreground md:text-6xl lg:text-7xl xl:text-8xl">
-              Automate Your Business. Scale Faster.
-            </h1>
-            <p data-scroll data-scroll-enable-touch-speed data-scroll-speed=".06" className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Metaswap Labs helps businesses save time, grow revenue, and scale operations through plug-and-play automation systems.
-            </p>
-              <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
-                <Link href="https://calendly.com/metaswapllc/30min" passHref>
-                  <button className="mt-6 px-6 py-3 rounded-md bg-metaswapBlue text-black font-semibold shadow-md hover:bg-opacity-90 transition">
-                    Get Automated <ChevronRight className="ml-1 h-4 w-4" />
-                  </button>
-                </Link>
-              </div>
-              <div className={cn(styles.scroll, isScrolled && styles["scroll--hidden"])}>
-                Scroll to discover <TriangleDownIcon className="mt-1 animate-bounce" />
-              </div>
-            </div>
+          <div className="container mx-auto flex max-w-3xl flex-col items-center justify-center space-y-10 px-4 text-center">
+  <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}
+    className="p-12 rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10 shadow-2xl">
+
+    <div data-scroll data-scroll-direction="horizontal" data-scroll-speed=".09" className="flex flex-wrap justify-center gap-3">
+      {tags.map((t) => (
+        <span key={t} className={`${styles.pill} mx-1`}>
+          {t}
+        </span>
+      ))}
+    </div>
+    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+      Automate Your Business. Scale Faster.
+    </h1>
+    <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+      Metaswap Labs helps businesses save time, grow revenue, and scale operations through plug-and-play automation systems.
+    </p>
+    <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
+      <Link href="https://calendly.com/metaswapllc/30min" passHref>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="group px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 mt-6"
+        >
+          Get Automated <ChevronRight className="ml-1 h-4 w-4" />
+        </motion.button>
+      </Link>
+    </div>
+    <div className={cn(styles.scroll, isScrolled && styles["scroll--hidden"])}>
+      Scroll to discover <TriangleDownIcon className="mt-1 animate-bounce" />
+    </div>
+  </motion.div>
+</div>
         </section>
 
         {/* Automation Library Preview */}
@@ -117,7 +126,7 @@ export default function Home() {
             {automations.map((auto) => (
               <div
                 key={auto.title}
-                className="tilt flex flex-col items-start rounded-md bg-white/5 p-6 text-left shadow-md backdrop-blur"
+                className="tilt flex flex-col items-start rounded-md glass p-6 text-left shadow-md fade-in"
               >
                 <div className="flex items-center space-x-3">
                   {auto.icon === "tiktok" && (
@@ -168,16 +177,16 @@ export default function Home() {
         <section id="benefits" data-scroll-section className="my-32 space-y-10 text-center">
           <h2 className="text-4xl font-semibold tracking-tight xl:text-6xl">Why Businesses Choose Metaswap</h2>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+            <div className="rounded-md glass p-6 fade-in">
               <span className="text-xl font-semibold">💼 100+ Hours Saved Per Month</span>
             </div>
-            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+            <div className="rounded-md glass p-6 fade-in">
               <span className="text-xl font-semibold">📈 3x Lead Response Speed</span>
             </div>
-            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+            <div className="rounded-md glass p-6 fade-in">
               <span className="text-xl font-semibold">🤖 24/7 Automation Reliability</span>
             </div>
-            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+            <div className="rounded-md glass p-6 fade-in">
               <span className="text-xl font-semibold">🛠️ Hands-Off Setup</span>
             </div>
           </div>
@@ -195,20 +204,20 @@ export default function Home() {
         <section id="testimonials" data-scroll-section className="my-32 space-y-10 bg-gradient-to-b from-background via-transparent to-background py-20 text-center">
           <h2 className="text-4xl font-semibold tracking-tight xl:text-6xl text-foreground">What Our Clients Say</h2>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 md:grid-cols-3">
-            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+            <div className="rounded-md glass p-6 fade-in">
               <p className="text-sm text-muted-foreground">“My sales process is 100% automated now — I don’t even open the CRM manually.”</p>
             </div>
-            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+            <div className="rounded-md glass p-6 fade-in">
               <p className="text-sm text-muted-foreground">“It feels like I hired 3 new team members. This is the real AI revolution.”</p>
             </div>
-            <div className="rounded-md bg-white/5 p-6 backdrop-blur">
+            <div className="rounded-md glass p-6 fade-in">
               <p className="text-sm text-muted-foreground">“Metaswap saved us from spending $20k/month on cold outreach tools.”</p>
             </div>
           </div>
         </section>
 
         {/* CTA Strip */}
-        <section id="cta" data-scroll-section className="my-32 bg-white py-20 text-center">
+        <section id="cta" data-scroll-section className="my-32 glass py-20 text-center fade-in">
           <h2 className="text-3xl font-semibold text-background">Ready to See What You Can Automate?</h2>
           <Link href="https://calendly.com/metaswapllc/30min" passHref>
             <button className="mt-6 rounded-md bg-background px-6 py-3 text-primary sm:text-lg">

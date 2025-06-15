@@ -6,35 +6,33 @@
 
 @layer base {
   :root {
-    --background: 174 41% 61%; /* Tiffany Blue background */
-    --background: 0 0% 0%; /* Pure black background */
+    --background: 222 47% 15%; /* Dark Blue background */
+    --foreground: 210 38% 95%; /* Light foreground for contrast */
 
-    --foreground: 174 41% 76%; /* Tiffany Blue foreground for contrast */
+    --card: 222 47% 20%; /* Slightly lighter dark blue for cards */
+    --card-foreground: 210 38% 98%;
 
-    --card: 174 41% 65%; /* Slightly lighter Tiffany Blue for cards */
-    --card-foreground: 174 100% 98%;
+    --popover: 222 47% 20%;
+    --popover-foreground: 210 38% 98%;
 
-    --popover: 174 41% 65%;
-    --popover-foreground: 174 100% 98%;
+    --primary: 210 100% 66%; /* Lighter blue for primary elements */
+    --primary-foreground: 222 47% 15%;
 
-    --primary: 174 41% 61%; /* Tiffany Blue for primary elements */
-    --primary-foreground: 0 0% 0%;
+    --secondary: 210 100% 85%; /* Even lighter blue for secondary elements */
+    --secondary-foreground: 222 47% 15%;
 
-    --secondary: 174 41% 80%; /* Lighter Tiffany Blue for secondary elements */
-    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 222 47% 25%; /* Muted dark blue for less prominent elements */
+    --muted-foreground: 210 38% 85%;
 
-    --muted: 174 41% 50%; /* Muted Tiffany Blue for less prominent elements */
-    --muted-foreground: 174 41% 85%;
-
-    --accent: 174 41% 61%; /* Tiffany Blue for accent elements */
-    --accent-foreground: 174 100% 98%;
+    --accent: 210 100% 66%; /* Lighter blue for accent elements */
+    --accent-foreground: 210 38% 98%;
 
     --destructive: 0 62.8% 30.6%; /* Keeping the same red for destructive actions */
-    --destructive-foreground: 174 100% 98%;
+    --destructive-foreground: 210 38% 98%;
 
-    --border: 174 41% 50%; /* Muted Tiffany Blue for borders */
-    --input: 174 41% 50%; /* Muted Tiffany Blue for input backgrounds */
-    --ring: 174 41% 80%; /* Lighter Tiffany Blue for focus rings */
+    --border: 222 47% 25%; /* Muted dark blue for borders */
+    --input: 222 47% 20%; /* Muted dark blue for input backgrounds */
+    --ring: 210 100% 85%; /* Lighter blue for focus rings */
 
     --radius: 0.5rem;
   }
@@ -97,6 +95,36 @@
     @apply text-sm lowercase tracking-tight text-slate-400;
   }
 
+  /* Glassmorphism utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  /* Animation utilities */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  .slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   /* blinking animation */
   @keyframes blink {
     from {
