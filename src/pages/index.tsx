@@ -81,31 +81,33 @@ export default function Home() {
         <section
           id="home"
           data-scroll-section
-          className="mt-40 flex w-full flex-col items-center justify-center space-y-6 text-center xl:min-h-screen"
+          className="flex min-h-[calc(100vh-160px)] w-full items-center justify-center py-20"
         >
-          <div data-scroll data-scroll-direction="horizontal" data-scroll-speed=".09" className="flex flex-wrap justify-center gap-2">
-            {tags.map((t) => (
-              <span key={t} className={styles.pill}>
-                {t}
-              </span>
-            ))}
-          </div>
-          <h1 data-scroll data-scroll-enable-touch-speed data-scroll-speed=".06" className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
-            Automate Your Business. Scale Faster.
-          </h1>
-          <p data-scroll data-scroll-enable-touch-speed data-scroll-speed=".06" className="mx-auto max-w-2xl text-lg tracking-tight text-muted-foreground 2xl:text-xl">
-            Metaswap Labs helps businesses save time, grow revenue, and scale operations through plug-and-play automation systems.
-          </p>
-          <div className="flex flex-col items-center text-center px-4">
-            <Link href="https://calendly.com/metaswapllc/30min" passHref>
-              <button className="mt-6 px-6 py-3 rounded-md bg-metaswapBlue text-black font-semibold shadow-md hover:bg-opacity-90 transition">
-                Get Automated <ChevronRight className="ml-1 h-4 w-4" />
-              </button>
-            </Link>
-          </div>
-          <div className={cn(styles.scroll, isScrolled && styles["scroll--hidden"]) }>
-            Scroll to discover <TriangleDownIcon className="mt-1 animate-bounce" />
-          </div>
+          <div className="container mx-auto flex max-w-6xl flex-col items-center justify-center space-y-8 px-4 text-center">
+            <div data-scroll data-scroll-direction="horizontal" data-scroll-speed=".09" className="flex flex-wrap justify-center gap-3">
+              {tags.map((t) => (
+                <span key={t} className={`${styles.pill} mx-1`}>
+                  {t}
+                </span>
+              ))}
+            </div>
+            <h1 data-scroll data-scroll-enable-touch-speed data-scroll-speed=".06" className="text-5xl font-bold leading-tight tracking-tighter text-foreground md:text-6xl lg:text-7xl xl:text-8xl">
+              Automate Your Business. Scale Faster.
+            </h1>
+            <p data-scroll data-scroll-enable-touch-speed data-scroll-speed=".06" className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+              Metaswap Labs helps businesses save time, grow revenue, and scale operations through plug-and-play automation systems.
+            </p>
+              <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
+                <Link href="https://calendly.com/metaswapllc/30min" passHref>
+                  <button className="mt-6 px-6 py-3 rounded-md bg-metaswapBlue text-black font-semibold shadow-md hover:bg-opacity-90 transition">
+                    Get Automated <ChevronRight className="ml-1 h-4 w-4" />
+                  </button>
+                </Link>
+              </div>
+              <div className={cn(styles.scroll, isScrolled && styles["scroll--hidden"])}>
+                Scroll to discover <TriangleDownIcon className="mt-1 animate-bounce" />
+              </div>
+            </div>
         </section>
 
         {/* Automation Library Preview */}
