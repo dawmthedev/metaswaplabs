@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronRight, MoveRight, Slack, Mail, Send } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { cn, scrollTo } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import styles from "@/styles/Home.module.css";
 import VanillaTilt from "vanilla-tilt";
 import { automations } from "@/data/automations";

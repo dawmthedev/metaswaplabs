@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import { useEffect, useRef, useState } from "react";
+import type { Variants } from "framer-motion";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { 
   ChevronRight, 
@@ -97,7 +98,15 @@ const benefits = [
   }
 ];
 
-const testimonials = [
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  followers?: string;
+  metric?: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     quote: "I went from spending 40 hours a week on content to just 2 hours. The AI creates better content than I ever could manually.",
     author: "Sarah Chen",
@@ -118,14 +127,63 @@ const testimonials = [
   }
 ];
 
-function AnimatedSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+interface AnimatedSectionProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const variants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+function AnimatedSection({ children, className = "" }: AnimatedSectionProps) {
   const controls = useAnimation();
   const ref = useRef(null);
-  const inView = useInView(ref, { threshold: 0.1, once: true });
+  const inView = useInView(ref, { amount: 0.1, once: true });
+
+  useEffect(() => {
+    type LocomotiveScrollType = {
+      destroy: () => void;
+    };
+
+    let scrollInstance: LocomotiveScrollType | null = null;
+    
+    const initScroll = async () => {
+      try {
+        const LocomotiveScroll = (await import('locomotive-scroll')).default;
+        const container = document.querySelector<HTMLElement>('[data-scroll-container]');
+        if (!container) return;
+        
+        scrollInstance = new LocomotiveScroll({
+          el: container,
+          smooth: true,
+          lerp: 0.1,
+        });
+      } catch (error) {
+        console.error('Failed to initialize scroll:', error);
+      }
+    };
+
+    void initScroll();
+
+    return () => {
+      if (scrollInstance?.destroy) {
+        scrollInstance.destroy();
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      void controls.start("visible");
     }
   }, [controls, inView]);
 
@@ -134,11 +192,7 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
       ref={ref}
       animate={controls}
       initial="hidden"
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 50 }
-      }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      variants={variants}
       className={className}
     >
       {children}
@@ -385,17 +439,17 @@ export default function Automations() {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
-                    className="p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300"
+                    className="p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col"
                   >
                     <div className="flex mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={`star-${i}`} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <p className="text-gray-300 mb-6 italic leading-relaxed">
-                      "{testimonial.quote}"
+                    <p className="text-gray-300 mb-6 italic leading-relaxed flex-grow">
+                      &ldquo;{testimonial.quote}&rdquo;
                     </p>
-                    <div className="border-t border-white/10 pt-4">
+                    <div className="border-t border-white/10 pt-4 mt-auto">
                       <div className="font-semibold text-white">{testimonial.author}</div>
                       <div className="text-gray-400 text-sm">{testimonial.role}</div>
                       {testimonial.followers && (
