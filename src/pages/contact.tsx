@@ -9,7 +9,7 @@ export default function Contact() {
 
   return (
     <Container title="Contact">
-      <section className="flex min-h-screen flex-col items-center justify-center py-20 px-4 bg-gradient-to-br from-blue-950/80 via-fuchsia-900/60 to-cyan-900/80">
+      <section className="flex min-h-screen flex-col items-center justify-center py-20 px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

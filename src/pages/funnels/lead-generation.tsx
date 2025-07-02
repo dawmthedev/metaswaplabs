@@ -9,7 +9,7 @@ export default function LeadGeneration() {
         <p className="max-w-xl text-lg text-muted-foreground">
           Sync leads to your CRM and trigger follow-ups without lifting a finger.
         </p>
-        <Link href="https://calendly.com/metaswapllc/30min" passHref className="rounded-md bg-primary px-6 py-3 text-primary-foreground">
+        <Link href="/contact" passHref className="rounded-md bg-primary px-6 py-3 text-primary-foreground">
           Get Automated
         </Link>
       </section>

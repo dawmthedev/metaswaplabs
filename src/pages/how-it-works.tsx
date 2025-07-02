@@ -89,12 +89,11 @@ export default function HowItWorks() {
               </h3>
               <p className="mb-6 text-gray-200">Book a private walkthrough and discover how your brand can scale smarter.</p>
               <a
-                href="https://calendly.com/metaswapllc/30min"
-                target="_blank"
+                href="/contact"
                 rel="noopener noreferrer"
                 className="inline-block rounded-full bg-gradient-to-r from-fuchsia-500 via-blue-500 to-cyan-400 px-8 py-4 text-lg font-bold text-white shadow-lg hover:scale-105 transition-transform duration-300"
               >
-                Book a Demo
+                Get Started
               </a>
             </div>
           </div>

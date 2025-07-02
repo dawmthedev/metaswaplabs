@@ -11,9 +11,7 @@ type NavLink = {
 };
 
 const NAV_LINKS: NavLink[] = [
-  { href: "/", label: "Home" },
-  { href: "/automations", label: "Automations" },
-  { href: "/how-it-works", label: "How It Works" },
+  { href: "/start", label: "How we work" },
   { href: "/benefits", label: "Benefits" },
   { href: "/why-us", label: "Why Us" },
 ];
@@ -31,38 +29,43 @@ const NavItem = ({
   isActive: boolean; 
   onClick: () => void;
   className?: string;
-}) => (
-  <li>
-    <Link
-      href={href}
-      onClick={onClick}
-      className={`relative px-4 py-2 text-sm font-semibold uppercase tracking-wide transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 ${
-        isActive ? "text-white" : "text-gray-300 hover:text-white"
-      } ${className}`}
-      aria-current={isActive ? "page" : undefined}
-    >
-      {label}
-      <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 transform bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
-    </Link>
-  </li>
-);
+}) => {
+  // Handle multi-word labels that need to be kept on a single line
+  const formattedLabel = label === "How It Works" ? "How It\u00A0Works" : label;
+  
+  return (
+    <li>
+      <Link
+        href={href}
+        onClick={onClick}
+        className={`relative whitespace-nowrap px-3 py-2 text-xs font-semibold uppercase tracking-wide transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 ${
+          isActive ? "text-white" : "text-gray-300 hover:text-white"
+        } ${className}`}
+        aria-current={isActive ? "page" : undefined}
+      >
+        {formattedLabel}
+        <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 transform bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+      </Link>
+    </li>
+  );
+}
 
 // Logo component
 const Logo = ({ onClick }: { onClick: () => void }) => (
   <Link
     href="/"
     onClick={onClick}
-    className="flex items-center gap-3 focus:outline-none focus-visible:ring-2"
+    className="flex items-center gap-2 focus:outline-none focus-visible:ring-2"
   >
-    <div className="rounded-full p-1.5 transition-opacity hover:opacity-90">
+    <div className="rounded-full p-1 transition-opacity hover:opacity-90">
       <Image
         src="/assets/logo/logo.png"
         alt="Metaswap Labs"
-        width={28}
-        height={28}
+        width={24}
+        height={24}
       />
     </div>
-    <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-lg font-bold text-transparent">
+    <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-base font-bold text-transparent">
       Metaswap Labs
     </span>
   </Link>
@@ -78,8 +81,8 @@ const DesktopNav = ({
   currentPath: string;
   onNavigate: () => void;
 }) => (
-  <nav className="hidden items-center space-x-12 lg:flex">
-    <ul className="flex items-center space-x-8">
+  <nav className="hidden items-center space-x-4 lg:flex">
+    <ul className="flex items-center space-x-2">
       {links.map((link) => (
         <NavItem
           key={link.href}
@@ -89,23 +92,15 @@ const DesktopNav = ({
           onClick={onNavigate}
         />
       ))}
+ 
     </ul>
-    <div className="flex items-center space-x-6">
+    <div className="ml-4">
       <Link
         href="/contact"
-        className="text-sm font-semibold uppercase tracking-wide text-gray-400 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
-        onClick={onNavigate}
+        className="flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide shadow-md hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
       >
-        Contacts
-      </Link>
-      <Link
-        href="https://calendly.com/metaswapllc/30min"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-2 text-sm font-semibold uppercase tracking-wide shadow-md hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
-      >
-        Get Automated
-        <ChevronRight className="ml-2 h-4 w-4" />
+        Get Started
+        <ChevronRight className="ml-1 h-3 w-3" />
       </Link>
     </div>
   </nav>
@@ -147,8 +142,8 @@ const MobileMenu = ({
             <X className="h-6 w-6 text-gray-300" />
           </button>
           
-          <nav className="mt-8">
-            <ul className="space-y-6">
+          <nav className="mt-6">
+            <ul className="space-y-4">
               {links.map((link) => (
                 <NavItem
                   key={link.href}
@@ -163,22 +158,14 @@ const MobileMenu = ({
           </nav>
 
           <div className="mt-8 space-y-4 border-t border-gray-800 pt-6">
+
             <Link
               href="/contact"
-              onClick={onClose}
-              className="block text-lg font-semibold uppercase tracking-wide text-gray-300 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
-            >
-              Contacts
-            </Link>
-            <Link
-              href="https://calendly.com/metaswapllc/30min"
-              className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 text-base font-semibold uppercase tracking-wide shadow-md hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
-              target="_blank"
-              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide shadow-md hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
               onClick={onClose}
             >
-              Get Automated
-              <ChevronRight className="ml-2 h-5 w-5" />
+              Get Started
+              <ChevronRight className="ml-1.5 h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -244,8 +231,8 @@ export default function Navbar() {
         aria-label="Main navigation"
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-gray-900/95 py-3 shadow-lg backdrop-blur-md"
-            : "bg-transparent py-5"
+            ? "glass py-2 bg-blue-600/15"
+            : "bg-transparent py-3"
         }`}
       >
         <div className="container mx-auto flex items-center justify-between px-6">

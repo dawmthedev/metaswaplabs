@@ -25,76 +25,76 @@ import { cn } from "@/lib/utils";
 const workflowSteps = [
   {
     icon: Upload,
-    title: "Upload Your Content",
-    description: "Drop your video, blog post, or raw content into our AI-powered system",
+    title: "Discovery & Planning",
+    description: "We collaborate to understand your vision, goals, and requirements to create a comprehensive project roadmap",
     color: "from-blue-500 to-purple-600"
   },
   {
     icon: Scissors,
-    title: "AI Clips & Captions",
-    description: "Our AI automatically creates short-form content, adds captions, and designs thumbnails",
+    title: "Design & Prototyping",
+    description: "Our team creates intuitive UI/UX designs and interactive prototypes for your approval before development",
     color: "from-purple-600 to-pink-600"
   },
   {
     icon: Share2,
-    title: "Cross-Platform Publishing",
-    description: "Automatically post to TikTok, Instagram, YouTube Shorts, and more",
+    title: "Development & Testing",
+    description: "Expert developers bring your vision to life with clean, maintainable code and thorough quality assurance",
     color: "from-pink-600 to-red-600"
   },
   {
     icon: BarChart3,
-    title: "Analytics Dashboard",
-    description: "Track performance, engagement, and ROI across all platforms in real-time",
+    title: "Deployment & Support",
+    description: "Seamless launch with ongoing maintenance, performance monitoring, and future enhancement options",
     color: "from-red-600 to-orange-600"
   }
 ];
 
 const workflowCards = [
   {
-    title: "30 Shorts from One Video",
-    description: "Turn a single long-form video into 30 viral short-form clips with AI-generated hooks, captions, and thumbnails",
-    icon: Video,
-    metric: "Save 40+ hours/week",
+    title: "Web Application Development",
+    description: "Custom web applications built with modern frameworks that are responsive, secure, and scalable to your business needs",
+    icon: Bot,
+    metric: "Fast delivery",
     color: "from-blue-500 to-cyan-500"
   },
   {
-    title: "Auto Social Media Manager",
-    description: "AI writes, schedules, and posts content across all platforms while maintaining your brand voice",
+    title: "Mobile App Development",
+    description: "Native and cross-platform mobile applications that deliver seamless user experiences across iOS and Android",
     icon: MessageSquare,
-    metric: "3x engagement boost",
+    metric: "Cross-platform",
     color: "from-purple-500 to-pink-500"
   },
   {
-    title: "Content Optimization Engine",
-    description: "AI analyzes trending topics and optimizes your content for maximum reach and virality",
-    icon: Bot,
-    metric: "87% increase in reach",
+    title: "E-commerce Solutions",
+    description: "Custom online stores with payment integration, inventory management, and optimized customer journeys",
+    icon: Target,
+    metric: "Increase sales",
     color: "from-green-500 to-emerald-500"
   },
   {
-    title: "Lead Generation Automator",
-    description: "Convert content engagement into qualified leads with automated follow-up sequences",
-    icon: Target,
-    metric: "5x more leads",
+    title: "Enterprise Software",
+    description: "Robust, scalable business applications that streamline operations and boost productivity across your organization",
+    icon: Video,
+    metric: "Boost efficiency",
     color: "from-orange-500 to-red-500"
   }
 ];
 
 const benefits = [
   {
-    title: "Save 20+ Hours Per Week",
-    description: "Automate content creation, posting, and engagement so you can focus on strategy and growth",
+    title: "Experienced Development Team",
+    description: "Our senior developers have decades of combined experience building solutions across multiple industries",
+    icon: Users
+  },
+  {
+    title: "Agile Methodology",
+    description: "We follow agile principles with regular updates, transparent communication, and iterative improvements",
     icon: Clock
   },
   {
-    title: "Increase Engagement by 300%",
-    description: "AI-optimized content performs better than manual posts with viral hooks and perfect timing",
+    title: "Scalable Solutions",
+    description: "We build software that grows with your business, from startup MVP to enterprise-grade applications",
     icon: TrendingUp
-  },
-  {
-    title: "Scale Without Hiring",
-    description: "Get the output of a 10-person content team with just AI and automation",
-    icon: Users
   }
 ];
 
@@ -108,22 +108,22 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "I went from spending 40 hours a week on content to just 2 hours. The AI creates better content than I ever could manually.",
+    quote: "They took our concept and transformed it into a powerful application that exceeded our expectations. Their development process was transparent and collaborative throughout.",
     author: "Sarah Chen",
-    role: "Content Creator",
-    followers: "2.3M followers"
+    role: "Startup Founder",
+    metric: "Launched in 8 weeks"
   },
   {
-    quote: "Our content reach increased by 500% in the first month. The automation handles everything while we focus on business growth.",
+    quote: "Our e-commerce sales increased by 200% after launching our new custom platform. Their attention to user experience and performance optimization made all the difference.",
     author: "Marcus Johnson",
     role: "CEO, TechStart Inc",
-    metric: "500% reach increase"
+    metric: "200% revenue growth"
   },
   {
-    quote: "This is like having a team of 20 content creators working 24/7. The ROI is insane.",
+    quote: "Working with this team was refreshingly straightforward. They delivered exactly what we needed, on time and within budget. The ongoing support has been excellent.",
     author: "Emily Rodriguez",
-    role: "Marketing Director",
-    metric: "2000% ROI"
+    role: "Product Director",
+    metric: "Under budget"
   }
 ];
 
@@ -200,7 +200,7 @@ function AnimatedSection({ children, className = "" }: AnimatedSectionProps) {
   );
 }
 
-export default function Automations() {
+export default function SoftwareDevelopment() {
   const [isScrolled, setIsScrolled] = useState(false);
   const refScrollContainer = useRef(null);
 
@@ -234,26 +234,26 @@ export default function Automations() {
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 text-sm font-medium text-purple-300 mb-6">
                 <Bot className="w-4 h-4 mr-2" />
-                AI-Powered Content Automation
+                Expert Software Development Services
               </div>
               
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight">
                 <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-                  Automate.
+                  Design.
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                  Scale.
+                  Develop.
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                  Dominate.
+                  Deploy.
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Let AI and automation handle your content—from idea to viral post. 
-                You just focus on growth.
+                From concept to launch, we bring your digital vision to life.
+                You focus on your business, we handle the tech.
               </p>
               
               <motion.div
@@ -262,9 +262,9 @@ export default function Automations() {
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10"
               >
-                <Link href="https://calendly.com/metaswapllc/30min" passHref>
+                <Link href="/contact" passHref>
                   <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105">
-                    See How It Works
+                    Our Process
                     <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </Link>
@@ -295,11 +295,11 @@ export default function Automations() {
             <AnimatedSection className="text-center mb-20">
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  How It Works
+                  Our Development Process
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                From upload to viral content in minutes, not hours
+                From concept to launch, we transform your vision into reality
               </p>
             </AnimatedSection>
 
@@ -334,11 +334,11 @@ export default function Automations() {
             <AnimatedSection className="text-center mb-20">
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                  Powerful Automations
+                  Our Development Services
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Choose from our library of proven automation workflows
+                Tailored software solutions to bring your vision to life
               </p>
             </AnimatedSection>
 
@@ -395,7 +395,7 @@ export default function Automations() {
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Built for creators, founders, and teams who want results, not complexity
+                We bring technical excellence and business understanding to every project we undertake
               </p>
             </AnimatedSection>
 
@@ -425,11 +425,11 @@ export default function Automations() {
             <AnimatedSection className="text-center mb-20">
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  Success Stories
+                  Client Success Stories
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                See how creators and businesses are dominating with automation
+                See how we've helped businesses transform their ideas into powerful software solutions
               </p>
             </AnimatedSection>
 
@@ -477,14 +477,14 @@ export default function Automations() {
               >
                 <h2 className="text-5xl md:text-6xl font-bold mb-6">
                   <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-                    Ready to Automate Your Content?
+                    Ready to Build Your Vision?
                   </span>
                 </h2>
                 <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                  Join thousands of creators and businesses who have already automated their way to success
+                  Let's discuss how we can transform your idea into a powerful software solution
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Link href="https://calendly.com/metaswapllc/30min" passHref>
+                  <Link href="/contact" passHref>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -503,7 +503,7 @@ export default function Automations() {
                   </motion.button>
                 </div>
                 <div className="mt-8 text-gray-400 text-sm">
-                  No setup fees • 30-day money-back guarantee • Cancel anytime
+                  Free consultation • Transparent pricing • Dedicated support
                 </div>
               </motion.div>
             </AnimatedSection>

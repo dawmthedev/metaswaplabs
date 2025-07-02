@@ -6,33 +6,34 @@
 
 @layer base {
   :root {
-    --background: 222 47% 15%; /* Dark Blue background */
-    --foreground: 210 38% 95%; /* Light foreground for contrast */
+    /* Using simple solid colors instead of HSL values */
+    --background: 0 0% 0%; /* Pure black background */
+    --foreground: 0 0% 100%; /* Pure white foreground for maximum contrast */
 
-    --card: 222 47% 20%; /* Slightly lighter dark blue for cards */
-    --card-foreground: 210 38% 98%;
+    --card: 0 0% 7%; /* Slightly lighter black for cards */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 20%;
-    --popover-foreground: 210 38% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 100% 66%; /* Lighter blue for primary elements */
-    --primary-foreground: 222 47% 15%;
+    --primary: 210 100% 66%; /* Keeping blue for primary elements */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 100% 85%; /* Even lighter blue for secondary elements */
-    --secondary-foreground: 222 47% 15%;
+    --secondary: 210 100% 85%; /* Lighter blue for secondary elements */
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 222 47% 25%; /* Muted dark blue for less prominent elements */
-    --muted-foreground: 210 38% 85%;
+    --muted: 0 0% 15%; /* Simple gray for muted elements */
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 210 100% 66%; /* Lighter blue for accent elements */
-    --accent-foreground: 210 38% 98%;
+    --accent: 210 100% 70%; /* Accent blue */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%; /* Keeping the same red for destructive actions */
-    --destructive-foreground: 210 38% 98%;
+    --destructive: 0 100% 50%; /* Simple red for destructive actions */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 47% 25%; /* Muted dark blue for borders */
-    --input: 222 47% 20%; /* Muted dark blue for input backgrounds */
-    --ring: 210 100% 85%; /* Lighter blue for focus rings */
+    --border: 0 0% 15%; /* Simple dark gray for borders */
+    --input: 0 0% 7%; /* Simple dark gray for input backgrounds */
+    --ring: 210 100% 85%; /* Light blue for focus rings */
 
     --radius: 0.5rem;
   }
@@ -51,11 +52,18 @@
   * {
     @apply border-border;
   }
+  
+  /* Only hide cursor on desktop/non-touch devices */
+  @media (min-width: 769px) {
+    * {
+      @apply cursor-none;
+    }
+  }
   html {
     @apply antialiased;
   }
   body {
-    @apply cursor-wait bg-background text-foreground;
+    @apply cursor-none bg-background text-foreground;
   }
   section {
     scroll-margin-top: 60px;
@@ -75,6 +83,25 @@
   }
   ::-webkit-scrollbar-thumb:active {
     @apply bg-primary;
+  }
+}
+
+/* cursor styles */
+@layer base {
+  .glass-cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+    backdrop-filter: blur(8px) saturate(180%);
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 }
 

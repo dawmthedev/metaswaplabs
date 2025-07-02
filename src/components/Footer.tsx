@@ -8,7 +8,7 @@ export default function Footer() {
           <Link href="/terms" className="hover:underline focus:outline-none focus:ring-2 focus:ring-primary rounded">Terms of Service</Link>
           <Link href="/privacy" className="hover:underline focus:outline-none focus:ring-2 focus:ring-primary rounded">Privacy Policy</Link>
           <Link href="#" className="hover:underline focus:outline-none focus:ring-2 focus:ring-primary rounded">Help Center</Link>
-          <Link href="https://calendly.com/metaswapllc/30min" target="_blank" rel="noopener noreferrer" className="hover:underline focus:outline-none focus:ring-2 focus:ring-primary rounded">Request Demo</Link>
+          <Link href="contact" rel="noopener noreferrer" className="hover:underline focus:outline-none focus:ring-2 focus:ring-primary rounded">Get started</Link>
           <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:underline focus:outline-none focus:ring-2 focus:ring-primary rounded">LinkedIn</Link>
         </div>
         <span className="text-xs text-gray-400">© {new Date().getFullYear()} Metaswap Labs. All rights reserved.</span>
