@@ -85,10 +85,10 @@ export default function Container(props: ContainerProps) {
         {isLoading && <Preloader />}
       </AnimatePresence>
       {/* Main content */}
-      <main className={cn("container p-6", props.className)}>
+      <main className={cn("w-full", props.className)}>
         {children}
-      </main>{" "}
-      {/* Maintain padding for content */}
+      </main>
+      {/* Full width content */}
       <Footer />
     </>
   );

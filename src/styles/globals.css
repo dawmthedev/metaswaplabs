@@ -1,11 +1,36 @@
 @import "clash-grotesk.css";
 
+@layer base {
+  @font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('/fonts/gt-walsheim-pro/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('/fonts/gt-walsheim-pro/GT-Walsheim-Medium-Trial-BF651b7fc728fb3.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('/fonts/gt-walsheim-pro/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    font-family: 'GT Walsheim Pro', system-ui, sans-serif;
     /* Using simple solid colors instead of HSL values */
     --background: 0 0% 0%; /* Pure black background */
     --foreground: 0 0% 100%; /* Pure white foreground for maximum contrast */
