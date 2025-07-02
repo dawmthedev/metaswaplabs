@@ -2,6 +2,7 @@ import Head from "next/head";
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
 import { Plug, LayoutGrid, Rocket } from "lucide-react";
+import Link from "next/link";
 
 export default function HowItWorks() {
   return (
@@ -88,13 +89,12 @@ export default function HowItWorks() {
                 Ready to See Vybs in Action?
               </h3>
               <p className="mb-6 text-gray-200">Book a private walkthrough and discover how your brand can scale smarter.</p>
-              <a
-                href="/contact"
-                rel="noopener noreferrer"
+              <Link 
+                href="/contact" 
                 className="inline-block rounded-full bg-gradient-to-r from-fuchsia-500 via-blue-500 to-cyan-400 px-8 py-4 text-lg font-bold text-white shadow-lg hover:scale-105 transition-transform duration-300"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

@@ -429,7 +429,7 @@ export default function SoftwareDevelopment() {
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                See how we've helped businesses transform their ideas into powerful software solutions
+                See how we&apos;ve helped businesses transform their ideas into powerful software solutions
               </p>
             </AnimatedSection>
 
@@ -481,7 +481,7 @@ export default function SoftwareDevelopment() {
                   </span>
                 </h2>
                 <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                  Let's discuss how we can transform your idea into a powerful software solution
+                  Let&apos;s discuss how we can transform your idea into a powerful software solution
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link href="/contact" passHref>

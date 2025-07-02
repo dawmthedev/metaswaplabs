@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { ChevronRight, MoveRight, Slack, Mail, Send } from "lucide-react";
+import { ChevronRight, MoveRight } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -206,13 +206,13 @@ export default function Home() {
           <h2 className="text-4xl font-semibold tracking-tight xl:text-6xl text-foreground">What Our Clients Say</h2>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 md:grid-cols-3">
             <div className="rounded-md glass p-6 fade-in">
-              <p className="text-sm text-muted-foreground">“Metaswap Labs built our web app from the ground up and helped us scale to our first 1,000 users. Their expertise was invaluable.”</p>
+              <p className="text-sm text-muted-foreground">&quot;Metaswap Labs built our web app from the ground up and helped us scale to our first 1,000 users. Their expertise was invaluable.&quot;</p>
             </div>
             <div className="rounded-md glass p-6 fade-in">
-              <p className="text-sm text-muted-foreground">“The new marketing site they built for us has been a game-changer. Our conversion rates have doubled.”</p>
+              <p className="text-sm text-muted-foreground">&quot;The new marketing site they built for us has been a game-changer. Our conversion rates have doubled.&quot;</p>
             </div>
             <div className="rounded-md glass p-6 fade-in">
-              <p className="text-sm text-muted-foreground">“Working with Metaswap Labs was a breeze. They are true professionals who deliver on their promises.”</p>
+              <p className="text-sm text-muted-foreground">&quot;Working with Metaswap Labs was a breeze. They are true professionals who deliver on their promises.&quot;</p>
             </div>
           </div>
         </section>
@@ -222,7 +222,7 @@ export default function Home() {
           <h2 className="text-3xl font-semibold text-background">Ready to Build and Scale Your Vision?</h2>
           <Link href="/contact" passHref>
             <button className="mt-6 rounded-md bg-background px-6 py-3 text-primary sm:text-lg">
-              Let's Talk →
+              Let&apos;s Talk →
             </button>
           </Link>
         </section>
