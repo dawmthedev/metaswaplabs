@@ -73,7 +73,7 @@ export default function Home() {
         </section>
 
         {/* Service Videos */}
-        <HoverVideos items={hoverVideoItems} />
+        {/* <HoverVideos items={hoverVideoItems} /> */}
 
         {/* Hero Section */}
         <Hero />

@@ -5,19 +5,19 @@ import { useEffect, useState, useRef } from "react";
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  
+
   useEffect(() => {
     setMounted(true);
-    
+
     // Only run particle effect on client-side
-    if (typeof window === 'undefined') return;
-    
+    if (typeof window === "undefined") return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
+
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    
+
     // Set canvas dimensions
     const setCanvasDimensions = () => {
       if (canvas) {
@@ -25,13 +25,13 @@ const Hero = () => {
         canvas.height = window.innerHeight;
       }
     };
-    
+
     setCanvasDimensions();
-    window.addEventListener('resize', setCanvasDimensions);
-    
+    window.addEventListener("resize", setCanvasDimensions);
+
     // Particle configuration
     const particleCount = 50;
-    const colors = ['#ffffff', '#8b5cf6', '#3b82f6', '#06b6d4'];
+    const colors = ["#ffffff", "#8b5cf6", "#3b82f6", "#06b6d4"];
     const particles: Array<{
       x: number;
       y: number;
@@ -40,7 +40,7 @@ const Hero = () => {
       speedX: number;
       speedY: number;
     }> = [];
-    
+
     // Initialize particles
     for (let i = 0; i < particleCount; i++) {
       const colorIndex = Math.floor(Math.random() * colors.length);
@@ -48,28 +48,28 @@ const Hero = () => {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         radius: Math.random() * 2 + 1,
-        color: colors[colorIndex] ?? '#ffffff', // Default to white if undefined
+        color: colors[colorIndex] ?? "#ffffff", // Default to white if undefined
         speedX: (Math.random() - 0.5) * 2,
-        speedY: (Math.random() - 0.5) * 2
+        speedY: (Math.random() - 0.5) * 2,
       });
     }
-    
+
     // Mouse interaction
     let mouseX = 0;
     let mouseY = 0;
-    
+
     const handleMouseMove = (event: MouseEvent) => {
       mouseX = event.clientX;
       mouseY = event.clientY;
     };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    
+
+    window.addEventListener("mousemove", handleMouseMove);
+
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       particles.forEach((particle, index) => {
         // Draw particle
         ctx.beginPath();
@@ -77,24 +77,30 @@ const Hero = () => {
         ctx.fillStyle = particle.color;
         ctx.globalAlpha = 0.4;
         ctx.fill();
-        
+
         // Move particle
         particle.x += particle.speedX;
         particle.y += particle.speedY;
-        
+
         // Bounce off walls
-        if (particle.x + particle.radius > canvas.width || particle.x - particle.radius < 0) {
+        if (
+          particle.x + particle.radius > canvas.width ||
+          particle.x - particle.radius < 0
+        ) {
           particle.speedX = -particle.speedX;
         }
-        if (particle.y + particle.radius > canvas.height || particle.y - particle.radius < 0) {
+        if (
+          particle.y + particle.radius > canvas.height ||
+          particle.y - particle.radius < 0
+        ) {
           particle.speedY = -particle.speedY;
         }
-        
+
         // Connect particles near mouse
         const dx = mouseX - particle.x;
         const dy = mouseY - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distance < 120) {
           ctx.beginPath();
           ctx.strokeStyle = particle.color;
@@ -104,7 +110,7 @@ const Hero = () => {
           ctx.lineTo(mouseX, mouseY);
           ctx.stroke();
         }
-        
+
         // Connect nearby particles
         for (let j = index + 1; j < particles.length; j++) {
           const p2 = particles[j];
@@ -112,7 +118,7 @@ const Hero = () => {
             const dx = particle.x - p2.x;
             const dy = particle.y - p2.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            
+
             if (distance < 100) {
               ctx.beginPath();
               ctx.strokeStyle = particle.color;
@@ -126,12 +132,12 @@ const Hero = () => {
         }
       });
     };
-    
+
     animate();
-    
+
     return () => {
-      window.removeEventListener('resize', setCanvasDimensions);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("resize", setCanvasDimensions);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
   return (
@@ -141,7 +147,7 @@ const Hero = () => {
       className="relative flex min-h-[calc(100vh-80px)] w-full items-center justify-center overflow-hidden py-24"
     >
       {mounted && (
-        <canvas 
+        <canvas
           ref={canvasRef}
           className="absolute inset-0 z-0"
           style={{ opacity: 0.8 }}
