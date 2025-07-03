@@ -266,8 +266,11 @@ const MobileParallaxVideos: React.FC<HoverVideosProps> = ({ items }) => {
 
   // Load and play the video whenever the focused index changes
   useEffect(() => {
-    if (items?.[focusedIndex]?.videoSrc) {
-      loadAndPlayVideo(items[focusedIndex].videoSrc);
+    if (items && items.length > 0 && focusedIndex >= 0 && focusedIndex < items.length) {
+      const item = items[focusedIndex];
+      if (item?.videoSrc) {
+        loadAndPlayVideo(item.videoSrc);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusedIndex, items]);
