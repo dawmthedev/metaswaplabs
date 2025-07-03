@@ -24,9 +24,11 @@ import { hoverVideoItems } from "@/components/HoverVideoData";
 export default function Home() {
   const refScrollContainer = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  
+
   useEffect(() => {
-    const tiltEls: HTMLElement[] = Array.from(document.querySelectorAll(".tilt"));
+    const tiltEls: HTMLElement[] = Array.from(
+      document.querySelectorAll(".tilt"),
+    );
     VanillaTilt.init(tiltEls, {
       speed: 300,
       glare: true,
@@ -39,17 +41,34 @@ export default function Home() {
 
   return (
     <Container className="mt-10">
-      <div ref={refScrollContainer}>
-        <ScrollManager setIsScrolled={setIsScrolled} containerRef={refScrollContainer} />
-        
+      <div
+        ref={refScrollContainer}
+        className="flex min-h-screen w-full flex-col items-center justify-center"
+      >
+        <ScrollManager
+          setIsScrolled={setIsScrolled}
+          containerRef={refScrollContainer}
+        />
+
         <Gradient />
-        
+
         {/* Full-width Hero Demos */}
-        <section id="demos" data-scroll-section className="relative w-full h-screen">
+        <section
+          id="demos"
+          data-scroll-section
+          className="relative h-screen w-full"
+        >
           <Demos />
-          
-          <div className={cn(styles.scroll, isScrolled && styles["scroll--hidden"], "mt-6 py-2")}>
-            Scroll to discover <TriangleDownIcon className="mt-1 animate-bounce" />
+
+          <div
+            className={cn(
+              styles.scroll,
+              isScrolled && styles["scroll--hidden"],
+              "mt-6 py-2",
+            )}
+          >
+            Scroll to discover{" "}
+            <TriangleDownIcon className="mt-1 animate-bounce" />
           </div>
         </section>
 
@@ -58,15 +77,15 @@ export default function Home() {
 
         {/* Hero Section */}
         <Hero />
-        
-        <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0 my-8">
+
+        <div className="my-8 flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
           <Link href="/contact" passHref>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center"
+              className="group flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-10 py-5 text-xl font-bold text-white transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25"
             >
-              Get Started <ChevronRight className="inline-block ml-2 h-5 w-5" />
+              Get Started <ChevronRight className="ml-2 inline-block h-5 w-5" />
             </motion.button>
           </Link>
         </div>

@@ -14,14 +14,15 @@ const dmSans = DM_Sans({
 const GlassCursor = () => {
   useEffect(() => {
     // Check if device is not mobile/touch
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    ) || window.matchMedia("(max-width: 768px)").matches;
-    
+    const isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      ) || window.matchMedia("(max-width: 768px)").matches;
+
     // Only add glass cursor on desktop devices
     if (!isMobile) {
-      const cursor = document.createElement('div');
-      cursor.classList.add('glass-cursor');
+      const cursor = document.createElement("div");
+      cursor.classList.add("glass-cursor");
       document.body.appendChild(cursor);
 
       const moveCursor = (e: MouseEvent) => {
@@ -29,10 +30,10 @@ const GlassCursor = () => {
         cursor.style.top = `${e.clientY}px`;
       };
 
-      window.addEventListener('mousemove', moveCursor);
+      window.addEventListener("mousemove", moveCursor);
 
       return () => {
-        window.removeEventListener('mousemove', moveCursor);
+        window.removeEventListener("mousemove", moveCursor);
         if (cursor.parentNode) {
           cursor.parentNode.removeChild(cursor);
         }
@@ -45,7 +46,7 @@ const GlassCursor = () => {
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);

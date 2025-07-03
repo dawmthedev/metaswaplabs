@@ -2,22 +2,25 @@
 
 @layer base {
   @font-face {
-    font-family: 'GT Walsheim Pro';
-    src: url('/fonts/gt-walsheim-pro/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf') format('opentype');
+    font-family: "GT Walsheim Pro";
+    src: url("/fonts/gt-walsheim-pro/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf")
+      format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: 'GT Walsheim Pro';
-    src: url('/fonts/gt-walsheim-pro/GT-Walsheim-Medium-Trial-BF651b7fc728fb3.otf') format('opentype');
+    font-family: "GT Walsheim Pro";
+    src: url("/fonts/gt-walsheim-pro/GT-Walsheim-Medium-Trial-BF651b7fc728fb3.otf")
+      format("opentype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: 'GT Walsheim Pro';
-    src: url('/fonts/gt-walsheim-pro/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf') format('opentype');
+    font-family: "GT Walsheim Pro";
+    src: url("/fonts/gt-walsheim-pro/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf")
+      format("opentype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -30,7 +33,7 @@
 
 @layer base {
   :root {
-    font-family: 'GT Walsheim Pro', system-ui, sans-serif;
+    font-family: "GT Walsheim Pro", system-ui, sans-serif;
     /* Using simple solid colors instead of HSL values */
     --background: 0 0% 0%; /* Pure black background */
     --foreground: 0 0% 100%; /* Pure white foreground for maximum contrast */
@@ -62,6 +65,16 @@
 
     --radius: 0.5rem;
   }
+  .container {
+    /*  Main Container */
+    width: 100%;
+    max-width: 80rem; /* 1280px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* background-color: rebeccapurple; */
+  }
 }
 
 /* global elements */
@@ -77,7 +90,7 @@
   * {
     @apply border-border;
   }
-  
+
   /* Only hide cursor on desktop/non-touch devices */
   @media (min-width: 769px) {
     * {
@@ -85,10 +98,17 @@
     }
   }
   html {
-    @apply antialiased;
+    @apply m-0 w-full overflow-x-hidden p-0 antialiased;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  html::-webkit-scrollbar {
+    display: none;
   }
   body {
-    @apply cursor-none bg-background text-foreground;
+    @apply m-0 w-full max-w-full cursor-none overflow-x-hidden bg-background p-0 text-foreground;
   }
   section {
     scroll-margin-top: 60px;

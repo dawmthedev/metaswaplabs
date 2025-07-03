@@ -17,22 +17,22 @@ const NAV_LINKS: NavLink[] = [
 ];
 
 // NavItem component for individual navigation links
-const NavItem = ({ 
-  href, 
-  label, 
-  isActive, 
+const NavItem = ({
+  href,
+  label,
+  isActive,
   onClick,
-  className = "" 
-}: { 
-  href: string; 
-  label: string; 
-  isActive: boolean; 
+  className = "",
+}: {
+  href: string;
+  label: string;
+  isActive: boolean;
   onClick: () => void;
   className?: string;
 }) => {
   // Handle multi-word labels that need to be kept on a single line
   const formattedLabel = label === "How It Works" ? "How It\u00A0Works" : label;
-  
+
   return (
     <li>
       <Link
@@ -48,7 +48,7 @@ const NavItem = ({
       </Link>
     </li>
   );
-}
+};
 
 // Logo component
 const Logo = ({ onClick }: { onClick: () => void }) => (
@@ -72,12 +72,12 @@ const Logo = ({ onClick }: { onClick: () => void }) => (
 );
 
 // Desktop navigation component
-const DesktopNav = ({ 
-  links, 
+const DesktopNav = ({
+  links,
   currentPath,
-  onNavigate 
-}: { 
-  links: NavLink[]; 
+  onNavigate,
+}: {
+  links: NavLink[];
   currentPath: string;
   onNavigate: () => void;
 }) => (
@@ -92,12 +92,11 @@ const DesktopNav = ({
           onClick={onNavigate}
         />
       ))}
- 
     </ul>
     <div className="ml-4">
       <Link
         href="/contact"
-        className="flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide shadow-md hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+        className="hover: flex scale-105 items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide shadow-md hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
       >
         Get Started
         <ChevronRight className="ml-1 h-3 w-3" />
@@ -107,14 +106,14 @@ const DesktopNav = ({
 );
 
 // Mobile menu component
-const MobileMenu = ({ 
-  isOpen, 
-  links, 
-  currentPath, 
-  onClose 
-}: { 
-  isOpen: boolean; 
-  links: NavLink[]; 
+const MobileMenu = ({
+  isOpen,
+  links,
+  currentPath,
+  onClose,
+}: {
+  isOpen: boolean;
+  links: NavLink[];
   currentPath: string;
   onClose: () => void;
 }) => {
@@ -125,15 +124,15 @@ const MobileMenu = ({
   return (
     <AnimatePresence>
       <motion.aside
-        initial={reduceMotion ? { opacity: 1 } : { x: "100%" }}
+        initial={reduceMotion ? { opacity: 0 } : { x: "100%" }}
         animate={reduceMotion ? { opacity: 1 } : { x: 0 }}
         exit={reduceMotion ? { opacity: 0 } : { x: "100%" }}
-        transition={{ type: "tween", duration: 0.3 }}
-        className="fixed inset-0 z-40 flex lg:hidden"
+        transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+        className="fixed inset-0 z-40 flex w-full lg:hidden"
         role="dialog"
         aria-modal="true"
       >
-        <div className="relative w-3/4 max-w-sm overflow-y-auto bg-gray-900 p-6 backdrop-blur-md">
+        <div className="relative w-full max-w-xs overflow-y-auto bg-gray-900 p-6 backdrop-blur-md">
           <button
             onClick={onClose}
             aria-label="Close menu"
@@ -141,7 +140,7 @@ const MobileMenu = ({
           >
             <X className="h-6 w-6 text-gray-300" />
           </button>
-          
+
           <nav className="mt-6">
             <ul className="space-y-4">
               {links.map((link) => (
@@ -158,7 +157,6 @@ const MobileMenu = ({
           </nav>
 
           <div className="mt-8 space-y-4 border-t border-gray-800 pt-6">
-
             <Link
               href="/contact"
               className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide shadow-md hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
@@ -170,9 +168,10 @@ const MobileMenu = ({
           </div>
         </div>
 
-        <div 
-          className="flex-1 bg-black bg-opacity-50" 
+        <div
+          className="flex-1 bg-black bg-opacity-75"
           onClick={onClose}
+          aria-hidden="true"
         />
       </motion.aside>
     </AnimatePresence>
@@ -180,11 +179,11 @@ const MobileMenu = ({
 };
 
 // Mobile menu toggle button
-const MobileMenuToggle = ({ 
-  isOpen, 
-  onClick 
-}: { 
-  isOpen: boolean; 
+const MobileMenuToggle = ({
+  isOpen,
+  onClick,
+}: {
+  isOpen: boolean;
   onClick: () => void;
 }) => (
   <button
@@ -230,30 +229,28 @@ export default function Navbar() {
       <header
         aria-label="Main navigation"
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "glass py-2 bg-blue-600/15"
-            : "bg-transparent py-3"
+          scrolled ? "glass bg-blue-600/15 py-2" : "bg-transparent py-3"
         }`}
       >
         <div className="container mx-auto flex items-center justify-between px-6">
           <Logo onClick={handleNavigate} />
-          
-          <DesktopNav 
-            links={NAV_LINKS} 
-            currentPath={router.pathname} 
+
+          <DesktopNav
+            links={NAV_LINKS}
+            currentPath={router.pathname}
             onNavigate={handleNavigate}
           />
-          
-          <MobileMenuToggle 
-            isOpen={isMenuOpen} 
-            onClick={() => setIsMenuOpen(!isMenuOpen)} 
+
+          <MobileMenuToggle
+            isOpen={isMenuOpen}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
         </div>
       </header>
 
-      <MobileMenu 
-        isOpen={isMenuOpen} 
-        links={NAV_LINKS} 
+      <MobileMenu
+        isOpen={isMenuOpen}
+        links={NAV_LINKS}
         currentPath={router.pathname}
         onClose={() => setIsMenuOpen(false)}
       />
